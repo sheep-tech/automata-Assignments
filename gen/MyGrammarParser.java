@@ -1,5 +1,4 @@
-// Generated from MyGrammar.g4 by ANTLR 4.9.2
-package gen;
+package gen;// Generated from MyGrammar.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -149,15 +148,13 @@ public class MyGrammarParser extends Parser {
 
 	public static class ExpressionContext extends ParserRuleContext {
 		public TerminalNode VARIABLE() { return getToken(MyGrammarParser.VARIABLE, 0); }
-		public List<OperationContext> operation() {
-			return getRuleContexts(OperationContext.class);
-		}
-		public OperationContext operation(int i) {
-			return getRuleContext(OperationContext.class,i);
-		}
+		public TerminalNode EQL() { return getToken(MyGrammarParser.EQL, 0); }
 		public List<TerminalNode> NUMBER() { return getTokens(MyGrammarParser.NUMBER); }
 		public TerminalNode NUMBER(int i) {
 			return getToken(MyGrammarParser.NUMBER, i);
+		}
+		public OperationContext operation() {
+			return getRuleContext(OperationContext.class,0);
 		}
 		public List<TerminalNode> WS() { return getTokens(MyGrammarParser.WS); }
 		public TerminalNode WS(int i) {
@@ -201,7 +198,7 @@ public class MyGrammarParser extends Parser {
 				_la = _input.LA(1);
 			}
 			setState(20);
-			operation();
+			match(EQL);
 			setState(21);
 			match(NUMBER);
 			setState(25);
@@ -321,7 +318,7 @@ public class MyGrammarParser extends Parser {
 		"\2\3\3\2\5\t\2\60\2\t\3\2\2\2\4\17\3\2\2\2\6,\3\2\2\2\b\n\5\4\3\2\t\b"+
 		"\3\2\2\2\n\13\3\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2\f\r\3\2\2\2\r\16\7\2\2"+
 		"\3\16\3\3\2\2\2\17\23\7\4\2\2\20\22\7\n\2\2\21\20\3\2\2\2\22\25\3\2\2"+
-		"\2\23\21\3\2\2\2\23\24\3\2\2\2\24\26\3\2\2\2\25\23\3\2\2\2\26\27\5\6\4"+
+		"\2\23\21\3\2\2\2\23\24\3\2\2\2\24\26\3\2\2\2\25\23\3\2\2\2\26\27\7\t\2"+
 		"\2\27\33\7\3\2\2\30\32\7\n\2\2\31\30\3\2\2\2\32\35\3\2\2\2\33\31\3\2\2"+
 		"\2\33\34\3\2\2\2\34\36\3\2\2\2\35\33\3\2\2\2\36\"\5\6\4\2\37!\7\n\2\2"+
 		" \37\3\2\2\2!$\3\2\2\2\" \3\2\2\2\"#\3\2\2\2#%\3\2\2\2$\"\3\2\2\2%)\7"+
