@@ -1,7 +1,7 @@
 grammar MyGrammar;
 // rules
 myStart  	: expression + EOF;
-expression  : VARIABLE WS* operation NUMBER WS* operation WS* NUMBER WS*;
+expression  : VARIABLE WS* EQL NUMBER WS* operation WS* NUMBER WS*;
 operation   : (ADD | SUB | MUL | DIV | EQL);
 
 // tokens
