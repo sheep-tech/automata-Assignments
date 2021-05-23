@@ -15,11 +15,12 @@ class MyListener extends MyGrammarBaseListener
 	{ 
 		// TODO: investigate contents of 'ctx'
 		System.err.println("exitMyStart()");
+
 	}
 	
 	@Override public void visitTerminal(TerminalNode node) 
 	{ 
-		System.err.println("terminal-node: '" + node.getText() + "'");
+		System.err.println("termimnal-node: '" + node.getText() + "'" + node.toStringTree());
 		// TODO: print line+column, token's type, etc.
 	}
 	// TODO: override other methods of 'MyGrammarBaseListener'

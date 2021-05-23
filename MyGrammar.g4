@@ -12,4 +12,6 @@ SUB         : '-';
 MUL         : '*';
 DIV         : '/';
 EQL         : '=';
+OR          : '||';
+AND         : '^';
 WS 			: [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines

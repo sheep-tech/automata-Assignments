@@ -1,5 +1,4 @@
 // Generated from MyGrammar.g4 by ANTLR 4.9.2
-package gen;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -17,7 +16,8 @@ public class MyGrammarParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		NUMBER=1, VARIABLE=2, ADD=3, SUB=4, MUL=5, DIV=6, EQL=7, WS=8;
+		NUMBER=1, VARIABLE=2, ADD=3, SUB=4, MUL=5, DIV=6, EQL=7, OR=8, AND=9, 
+		WS=10;
 	public static final int
 		RULE_myStart = 0, RULE_expression = 1, RULE_operation = 2;
 	private static String[] makeRuleNames() {
@@ -29,13 +29,14 @@ public class MyGrammarParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, null, "'+'", "'-'", "'*'", "'/'", "'='"
+			null, null, null, "'+'", "'-'", "'*'", "'/'", "'='", "'||'", "'^'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "NUMBER", "VARIABLE", "ADD", "SUB", "MUL", "DIV", "EQL", "WS"
+			null, "NUMBER", "VARIABLE", "ADD", "SUB", "MUL", "DIV", "EQL", "OR", 
+			"AND", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -314,18 +315,18 @@ public class MyGrammarParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\n/\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\f/\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\3\2\6\2\n\n\2\r\2\16\2\13\3\2\3\2\3\3\3\3\7\3\22\n\3\f\3\16"+
 		"\3\25\13\3\3\3\3\3\3\3\7\3\32\n\3\f\3\16\3\35\13\3\3\3\3\3\7\3!\n\3\f"+
 		"\3\16\3$\13\3\3\3\3\3\7\3(\n\3\f\3\16\3+\13\3\3\4\3\4\3\4\2\2\5\2\4\6"+
 		"\2\3\3\2\5\t\2\60\2\t\3\2\2\2\4\17\3\2\2\2\6,\3\2\2\2\b\n\5\4\3\2\t\b"+
 		"\3\2\2\2\n\13\3\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2\f\r\3\2\2\2\r\16\7\2\2"+
-		"\3\16\3\3\2\2\2\17\23\7\4\2\2\20\22\7\n\2\2\21\20\3\2\2\2\22\25\3\2\2"+
+		"\3\16\3\3\2\2\2\17\23\7\4\2\2\20\22\7\f\2\2\21\20\3\2\2\2\22\25\3\2\2"+
 		"\2\23\21\3\2\2\2\23\24\3\2\2\2\24\26\3\2\2\2\25\23\3\2\2\2\26\27\5\6\4"+
-		"\2\27\33\7\3\2\2\30\32\7\n\2\2\31\30\3\2\2\2\32\35\3\2\2\2\33\31\3\2\2"+
-		"\2\33\34\3\2\2\2\34\36\3\2\2\2\35\33\3\2\2\2\36\"\5\6\4\2\37!\7\n\2\2"+
+		"\2\27\33\7\3\2\2\30\32\7\f\2\2\31\30\3\2\2\2\32\35\3\2\2\2\33\31\3\2\2"+
+		"\2\33\34\3\2\2\2\34\36\3\2\2\2\35\33\3\2\2\2\36\"\5\6\4\2\37!\7\f\2\2"+
 		" \37\3\2\2\2!$\3\2\2\2\" \3\2\2\2\"#\3\2\2\2#%\3\2\2\2$\"\3\2\2\2%)\7"+
-		"\3\2\2&(\7\n\2\2\'&\3\2\2\2(+\3\2\2\2)\'\3\2\2\2)*\3\2\2\2*\5\3\2\2\2"+
+		"\3\2\2&(\7\f\2\2\'&\3\2\2\2(+\3\2\2\2)\'\3\2\2\2)*\3\2\2\2*\5\3\2\2\2"+
 		"+)\3\2\2\2,-\t\2\2\2-\7\3\2\2\2\7\13\23\33\")";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
