@@ -20,7 +20,7 @@ class MyListener extends MyGrammarBaseListener
 	
 	@Override public void visitTerminal(TerminalNode node) 
 	{ 
-		System.err.println("termimnal-node: '" + node.getText() + "'" + node.toStringTree());
+		System.err.println("Hello there: '" + node.getText() + "'");
 		// TODO: print line+column, token's type, etc.
 	}
 	// TODO: override other methods of 'MyGrammarBaseListener'
