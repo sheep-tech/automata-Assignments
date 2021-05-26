@@ -5,25 +5,62 @@ import gen.*;
 
 class MyListener extends MyGrammarBaseListener
 {
-	@Override public void enterMyStart(MyGrammarParser.MyStartContext ctx) 
-	{ 
-		// TODO: investigate contents of 'ctx'
-		System.err.println("enterMyStart()");
-	}
-	
-	@Override public void exitMyStart(MyGrammarParser.MyStartContext ctx) 
-	{ 
-		// TODO: investigate contents of 'ctx'
-		System.err.println("exitMyStart()");
+	float result = 0;
+	float var1 = 0;
+	float var2 = 0;
+	@Override public void enterMyStart(MyGrammarParser.MyStartContext ctx)
+	{ }
 
+	@Override
+	public void enterVar1(MyGrammarParser.Var1Context ctx) {
+		var1 = Float.parseFloat(ctx.getText());
+		System.out.println("Var 1 is: " + var1);
 	}
-	
-	@Override public void visitTerminal(TerminalNode node) 
+
+	@Override
+	public void enterVar2(MyGrammarParser.Var2Context ctx) {
+		var2 = Float.parseFloat(ctx.getText());
+		System.out.println("Var 2 is: " + var2);
+	}
+
+	@Override
+	public void enterAdd(MyGrammarParser.AddContext ctx) {
+		result = var1 + var2;
+	}
+
+	@Override
+	public void enterSub(MyGrammarParser.SubContext ctx) {
+		result = var1 - var2;
+	}
+
+	@Override
+	public void enterMul(MyGrammarParser.MulContext ctx) {
+		result = var1 * var2;
+	}
+
+	@Override
+	public void enterDiv(MyGrammarParser.DivContext ctx) {
+		result = var1 / var2;
+	}
+
+	@Override public void exitMyStart(MyGrammarParser.MyStartContext ctx) {}
+
+	@Override
+	public void exitExpression(MyGrammarParser.ExpressionContext ctx) {
+		System.out.println("The result is: " + result + "\n");
+
+		var1 = 0;
+		var2 = 0;
+		result = 0;
+	}
+
+	@Override public void visitTerminal(TerminalNode node)
 	{ 
-		System.err.println("termimnal-node: '" + node.getText() + "'" + node.toStringTree());
-		// TODO: print line+column, token's type, etc.
+		System.out.println("Node: '" + node.getText() + "' " +
+				"line: " + node.getSymbol().getLine() + " " +
+				"column: " + node.getSymbol().getCharPositionInLine() + " " +
+				"token's type: " + node.getSymbol().getType());
 	}
-	// TODO: override other methods of 'MyGrammarBaseListener'
 }
 
 public class Main 

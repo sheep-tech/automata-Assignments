@@ -1,4 +1,4 @@
-// Generated from MyGrammar.g4 by ANTLR 4.9.2
+package gen;// Generated from MyGrammar.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -16,27 +16,27 @@ public class MyGrammarParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		NUMBER=1, VARIABLE=2, ADD=3, SUB=4, MUL=5, DIV=6, EQL=7, OR=8, AND=9, 
-		WS=10;
+		NUMBER=1, VARIABLE=2, ADD=3, SUB=4, MUL=5, DIV=6, EQL=7, WS=8;
 	public static final int
-		RULE_myStart = 0, RULE_expression = 1, RULE_operation = 2;
+		RULE_myStart = 0, RULE_expression = 1, RULE_var1 = 2, RULE_var2 = 3, RULE_add = 4, 
+		RULE_sub = 5, RULE_mul = 6, RULE_div = 7, RULE_operation = 8;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"myStart", "expression", "operation"
+			"myStart", "expression", "var1", "var2", "add", "sub", "mul", "div", 
+			"operation"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, null, "'+'", "'-'", "'*'", "'/'", "'='", "'||'", "'^'"
+			null, null, null, "'+'", "'-'", "'*'", "'/'", "'='"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "NUMBER", "VARIABLE", "ADD", "SUB", "MUL", "DIV", "EQL", "OR", 
-			"AND", "WS"
+			null, "NUMBER", "VARIABLE", "ADD", "SUB", "MUL", "DIV", "EQL", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -119,21 +119,21 @@ public class MyGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(7); 
+			setState(19); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(6);
+				setState(18);
 				expression();
 				}
 				}
-				setState(9); 
+				setState(21); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==VARIABLE );
-			setState(11);
+			} while ( _la==NUMBER );
+			setState(23);
 			match(EOF);
 			}
 		}
@@ -149,16 +149,14 @@ public class MyGrammarParser extends Parser {
 	}
 
 	public static class ExpressionContext extends ParserRuleContext {
-		public TerminalNode VARIABLE() { return getToken(MyGrammarParser.VARIABLE, 0); }
-		public List<OperationContext> operation() {
-			return getRuleContexts(OperationContext.class);
+		public Var1Context var1() {
+			return getRuleContext(Var1Context.class,0);
 		}
-		public OperationContext operation(int i) {
-			return getRuleContext(OperationContext.class,i);
+		public Var2Context var2() {
+			return getRuleContext(Var2Context.class,0);
 		}
-		public List<TerminalNode> NUMBER() { return getTokens(MyGrammarParser.NUMBER); }
-		public TerminalNode NUMBER(int i) {
-			return getToken(MyGrammarParser.NUMBER, i);
+		public OperationContext operation() {
+			return getRuleContext(OperationContext.class,0);
 		}
 		public List<TerminalNode> WS() { return getTokens(MyGrammarParser.WS); }
 		public TerminalNode WS(int i) {
@@ -185,69 +183,51 @@ public class MyGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(13);
-			match(VARIABLE);
-			setState(17);
-			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while (_la==WS) {
-				{
-				{
-				setState(14);
-				match(WS);
-				}
-				}
-				setState(19);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-			}
-			setState(20);
-			operation();
-			setState(21);
-			match(NUMBER);
 			setState(25);
+			var1();
+			setState(29);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==WS) {
 				{
 				{
-				setState(22);
+				setState(26);
 				match(WS);
 				}
 				}
-				setState(27);
+				setState(31);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(28);
-			operation();
 			setState(32);
+			var2();
+			setState(36);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==WS) {
 				{
 				{
-				setState(29);
+				setState(33);
 				match(WS);
 				}
 				}
-				setState(34);
+				setState(38);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(35);
-			match(NUMBER);
 			setState(39);
+			operation();
+			setState(43);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==WS) {
 				{
 				{
-				setState(36);
+				setState(40);
 				match(WS);
 				}
 				}
-				setState(41);
+				setState(45);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -264,12 +244,241 @@ public class MyGrammarParser extends Parser {
 		return _localctx;
 	}
 
-	public static class OperationContext extends ParserRuleContext {
+	public static class Var1Context extends ParserRuleContext {
+		public TerminalNode NUMBER() { return getToken(MyGrammarParser.NUMBER, 0); }
+		public Var1Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_var1; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterVar1(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitVar1(this);
+		}
+	}
+
+	public final Var1Context var1() throws RecognitionException {
+		Var1Context _localctx = new Var1Context(_ctx, getState());
+		enterRule(_localctx, 4, RULE_var1);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(46);
+			match(NUMBER);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Var2Context extends ParserRuleContext {
+		public TerminalNode NUMBER() { return getToken(MyGrammarParser.NUMBER, 0); }
+		public Var2Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_var2; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterVar2(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitVar2(this);
+		}
+	}
+
+	public final Var2Context var2() throws RecognitionException {
+		Var2Context _localctx = new Var2Context(_ctx, getState());
+		enterRule(_localctx, 6, RULE_var2);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(48);
+			match(NUMBER);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class AddContext extends ParserRuleContext {
 		public TerminalNode ADD() { return getToken(MyGrammarParser.ADD, 0); }
+		public AddContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_add; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterAdd(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitAdd(this);
+		}
+	}
+
+	public final AddContext add() throws RecognitionException {
+		AddContext _localctx = new AddContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_add);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(50);
+			match(ADD);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class SubContext extends ParserRuleContext {
 		public TerminalNode SUB() { return getToken(MyGrammarParser.SUB, 0); }
+		public SubContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_sub; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterSub(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitSub(this);
+		}
+	}
+
+	public final SubContext sub() throws RecognitionException {
+		SubContext _localctx = new SubContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_sub);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(52);
+			match(SUB);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class MulContext extends ParserRuleContext {
 		public TerminalNode MUL() { return getToken(MyGrammarParser.MUL, 0); }
+		public MulContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_mul; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterMul(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitMul(this);
+		}
+	}
+
+	public final MulContext mul() throws RecognitionException {
+		MulContext _localctx = new MulContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_mul);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(54);
+			match(MUL);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class DivContext extends ParserRuleContext {
 		public TerminalNode DIV() { return getToken(MyGrammarParser.DIV, 0); }
-		public TerminalNode EQL() { return getToken(MyGrammarParser.EQL, 0); }
+		public DivContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_div; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterDiv(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitDiv(this);
+		}
+	}
+
+	public final DivContext div() throws RecognitionException {
+		DivContext _localctx = new DivContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_div);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(56);
+			match(DIV);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class OperationContext extends ParserRuleContext {
+		public AddContext add() {
+			return getRuleContext(AddContext.class,0);
+		}
+		public SubContext sub() {
+			return getRuleContext(SubContext.class,0);
+		}
+		public MulContext mul() {
+			return getRuleContext(MulContext.class,0);
+		}
+		public DivContext div() {
+			return getRuleContext(DivContext.class,0);
+		}
 		public OperationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -286,20 +495,39 @@ public class MyGrammarParser extends Parser {
 
 	public final OperationContext operation() throws RecognitionException {
 		OperationContext _localctx = new OperationContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_operation);
-		int _la;
+		enterRule(_localctx, 16, RULE_operation);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(42);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ADD) | (1L << SUB) | (1L << MUL) | (1L << DIV) | (1L << EQL))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
+			setState(62);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case ADD:
+				{
+				setState(58);
+				add();
+				}
+				break;
+			case SUB:
+				{
+				setState(59);
+				sub();
+				}
+				break;
+			case MUL:
+				{
+				setState(60);
+				mul();
+				}
+				break;
+			case DIV:
+				{
+				setState(61);
+				div();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 			}
 		}
@@ -315,19 +543,23 @@ public class MyGrammarParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\f/\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\3\2\6\2\n\n\2\r\2\16\2\13\3\2\3\2\3\3\3\3\7\3\22\n\3\f\3\16"+
-		"\3\25\13\3\3\3\3\3\3\3\7\3\32\n\3\f\3\16\3\35\13\3\3\3\3\3\7\3!\n\3\f"+
-		"\3\16\3$\13\3\3\3\3\3\7\3(\n\3\f\3\16\3+\13\3\3\4\3\4\3\4\2\2\5\2\4\6"+
-		"\2\3\3\2\5\t\2\60\2\t\3\2\2\2\4\17\3\2\2\2\6,\3\2\2\2\b\n\5\4\3\2\t\b"+
-		"\3\2\2\2\n\13\3\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2\f\r\3\2\2\2\r\16\7\2\2"+
-		"\3\16\3\3\2\2\2\17\23\7\4\2\2\20\22\7\f\2\2\21\20\3\2\2\2\22\25\3\2\2"+
-		"\2\23\21\3\2\2\2\23\24\3\2\2\2\24\26\3\2\2\2\25\23\3\2\2\2\26\27\5\6\4"+
-		"\2\27\33\7\3\2\2\30\32\7\f\2\2\31\30\3\2\2\2\32\35\3\2\2\2\33\31\3\2\2"+
-		"\2\33\34\3\2\2\2\34\36\3\2\2\2\35\33\3\2\2\2\36\"\5\6\4\2\37!\7\f\2\2"+
-		" \37\3\2\2\2!$\3\2\2\2\" \3\2\2\2\"#\3\2\2\2#%\3\2\2\2$\"\3\2\2\2%)\7"+
-		"\3\2\2&(\7\f\2\2\'&\3\2\2\2(+\3\2\2\2)\'\3\2\2\2)*\3\2\2\2*\5\3\2\2\2"+
-		"+)\3\2\2\2,-\t\2\2\2-\7\3\2\2\2\7\13\23\33\")";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\nC\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\3\2\6\2\26"+
+		"\n\2\r\2\16\2\27\3\2\3\2\3\3\3\3\7\3\36\n\3\f\3\16\3!\13\3\3\3\3\3\7\3"+
+		"%\n\3\f\3\16\3(\13\3\3\3\3\3\7\3,\n\3\f\3\16\3/\13\3\3\4\3\4\3\5\3\5\3"+
+		"\6\3\6\3\7\3\7\3\b\3\b\3\t\3\t\3\n\3\n\3\n\3\n\5\nA\n\n\3\n\2\2\13\2\4"+
+		"\6\b\n\f\16\20\22\2\2\2@\2\25\3\2\2\2\4\33\3\2\2\2\6\60\3\2\2\2\b\62\3"+
+		"\2\2\2\n\64\3\2\2\2\f\66\3\2\2\2\168\3\2\2\2\20:\3\2\2\2\22@\3\2\2\2\24"+
+		"\26\5\4\3\2\25\24\3\2\2\2\26\27\3\2\2\2\27\25\3\2\2\2\27\30\3\2\2\2\30"+
+		"\31\3\2\2\2\31\32\7\2\2\3\32\3\3\2\2\2\33\37\5\6\4\2\34\36\7\n\2\2\35"+
+		"\34\3\2\2\2\36!\3\2\2\2\37\35\3\2\2\2\37 \3\2\2\2 \"\3\2\2\2!\37\3\2\2"+
+		"\2\"&\5\b\5\2#%\7\n\2\2$#\3\2\2\2%(\3\2\2\2&$\3\2\2\2&\'\3\2\2\2\')\3"+
+		"\2\2\2(&\3\2\2\2)-\5\22\n\2*,\7\n\2\2+*\3\2\2\2,/\3\2\2\2-+\3\2\2\2-."+
+		"\3\2\2\2.\5\3\2\2\2/-\3\2\2\2\60\61\7\3\2\2\61\7\3\2\2\2\62\63\7\3\2\2"+
+		"\63\t\3\2\2\2\64\65\7\5\2\2\65\13\3\2\2\2\66\67\7\6\2\2\67\r\3\2\2\28"+
+		"9\7\7\2\29\17\3\2\2\2:;\7\b\2\2;\21\3\2\2\2<A\5\n\6\2=A\5\f\7\2>A\5\16"+
+		"\b\2?A\5\20\t\2@<\3\2\2\2@=\3\2\2\2@>\3\2\2\2@?\3\2\2\2A\23\3\2\2\2\7"+
+		"\27\37&-@";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
