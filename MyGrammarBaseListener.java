@@ -1,4 +1,4 @@
-package gen;// Generated from MyGrammar.g4 by ANTLR 4.9.2
+// Generated from C:/Users/buona/Documents/Git/autassignments\MyGrammar.g4 by ANTLR 4.9.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -15,109 +15,109 @@ public class MyGrammarBaseListener implements MyGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMyStart(MyGrammarParser.MyStartContext ctx) { }
+	@Override public void enterProg(MyGrammarParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMyStart(MyGrammarParser.MyStartContext ctx) { }
+	@Override public void exitProg(MyGrammarParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpression(MyGrammarParser.ExpressionContext ctx) { }
+	@Override public void enterPrintExpr(MyGrammarParser.PrintExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpression(MyGrammarParser.ExpressionContext ctx) { }
+	@Override public void exitPrintExpr(MyGrammarParser.PrintExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVar1(MyGrammarParser.Var1Context ctx) { }
+	@Override public void enterAssign(MyGrammarParser.AssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVar1(MyGrammarParser.Var1Context ctx) { }
+	@Override public void exitAssign(MyGrammarParser.AssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVar2(MyGrammarParser.Var2Context ctx) { }
+	@Override public void enterBlank(MyGrammarParser.BlankContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVar2(MyGrammarParser.Var2Context ctx) { }
+	@Override public void exitBlank(MyGrammarParser.BlankContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAdd(MyGrammarParser.AddContext ctx) { }
+	@Override public void enterParens(MyGrammarParser.ParensContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAdd(MyGrammarParser.AddContext ctx) { }
+	@Override public void exitParens(MyGrammarParser.ParensContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSub(MyGrammarParser.SubContext ctx) { }
+	@Override public void enterMulDiv(MyGrammarParser.MulDivContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSub(MyGrammarParser.SubContext ctx) { }
+	@Override public void exitMulDiv(MyGrammarParser.MulDivContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMul(MyGrammarParser.MulContext ctx) { }
+	@Override public void enterAddSub(MyGrammarParser.AddSubContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMul(MyGrammarParser.MulContext ctx) { }
+	@Override public void exitAddSub(MyGrammarParser.AddSubContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDiv(MyGrammarParser.DivContext ctx) { }
+	@Override public void enterId(MyGrammarParser.IdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDiv(MyGrammarParser.DivContext ctx) { }
+	@Override public void exitId(MyGrammarParser.IdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOperation(MyGrammarParser.OperationContext ctx) { }
+	@Override public void enterInt(MyGrammarParser.IntContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOperation(MyGrammarParser.OperationContext ctx) { }
+	@Override public void exitInt(MyGrammarParser.IntContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
