@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0af13df2-a5da-4794-986c-203e68eb77e9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="arvin" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1swctJnkRsDTqGbX3J4jmRB1A64" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Main.java" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JarApplication">
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Java Scratch">
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Java/jdk-16.0.1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Main.java" />
+      <option name="SCRATCH_FILE_URL" value="file://$PROJECT_DIR$/Main.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java" type="Java Scratch" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Java/jdk-16.0.1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Main.java" />
+      <module name="autassignments" />
+      <option name="SCRATCH_FILE_URL" value="file://$PROJECT_DIR$/Main.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0af13df2-a5da-4794-986c-203e68eb77e9" name="Default Changelist" comment="" />
+      <created>1621787306069</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621787306069</updated>
+      <workItem from="1621787307294" duration="275000" />
+      <workItem from="1621804657716" duration="1354000" />
+      <workItem from="1621808907690" duration="27000" />
+      <workItem from="1621811251630" duration="607000" />
+      <workItem from="1621811876566" duration="636000" />
+      <workItem from="1622026720072" duration="1601000" />
+      <workItem from="1622298785448" duration="2453000" />
+    </task>
+    <task id="LOCAL-00001" summary="corrected grammar eql">
+      <created>1621787442303</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1621787442303</updated>
+    </task>
+    <task id="LOCAL-00002" summary="replace files with new generated java project files">
+      <created>1622028867545</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622028867545</updated>
+    </task>
+    <task id="LOCAL-00003" summary="replace files with new generated java project files">
+      <created>1622036904324</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622036904325</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="corrected grammar eql" />
+    <MESSAGE value="generated correct lexer and parsers" />
+    <MESSAGE value="replace files with new generated java project files" />
+    <option name="LAST_COMMIT_MESSAGE" value="replace files with new generated java project files" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="141" y="8" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621812369057">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="141" y="8" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/-1920.-87.1536.824@0.0.1366.728" timestamp="1621812369057" />
+    <state x="467" y="70" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1621812346401">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="467" y="70" key="#com.intellij.ide.macro.MacrosDialog/0.0.1366.728/-1920.-87.1536.824@0.0.1366.728" timestamp="1621812346401" />
+    <state x="412" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1621812205191">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="412" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728/-1920.-87.1536.824@0.0.1366.728" timestamp="1621812205191" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1622027620941">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/-1920.-87.1536.824@0.0.1366.728" timestamp="1622027620941" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1621811960027">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728/-1920.-87.1536.824@0.0.1366.728" timestamp="1621811960027" />
+    <state x="65" y="0" key="new project wizard" timestamp="1622027624755">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="0" key="new project wizard/0.0.1366.728/-1920.-87.1536.824@0.0.1366.728" timestamp="1622027624755" />
+  </component>
+</project>
