@@ -1,11 +1,16 @@
-a = 5
-b = 6
+a = 22
+b = 20
 
-c = 78
-d = 10
+if a >= 77 then
+    b = b + 10
+else
+    b = b - 10
+fi
+print a, b
 
-if (a==b) {
-    c = c + 10
-}
+c = 10
+while c > 0 do
+    b=b*2
+    c=c-1
 
-e = a+c*(a-b*(d/a))
+print c, b

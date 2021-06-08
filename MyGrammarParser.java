@@ -1,4 +1,4 @@
-// Generated from C:/Users/buona/Documents/Git/autassignments\MyGrammar.g4 by ANTLR 4.9.1
+// Generated from C:/Users/buona/Documents/Git/Automata Assignment 3\MyGrammar.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -16,26 +16,36 @@ public class MyGrammarParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, MUL=4, DIV=5, ADD=6, SUB=7, ID=8, INT=9, NEWLINE=10, 
-		WS=11;
+		T__0=1, T__1=2, NUMBER=3, PLUS=4, MINUS=5, MULT=6, DIV=7, ASSIGN=8, AND=9, 
+		OR=10, EQ=11, NEQ=12, GT=13, LT=14, GTEQ=15, LTEQ=16, TRUE=17, FALSE=18, 
+		COMMA=19, PRINT=20, WHILE=21, IF=22, THEN=23, ELSE=24, FI=25, DO=26, DOT=27, 
+		ID=28, WS=29;
 	public static final int
-		RULE_prog = 0, RULE_stat = 1, RULE_expr = 2;
+		RULE_start = 0, RULE_statement = 1, RULE_assign = 2, RULE_loop = 3, RULE_print = 4, 
+		RULE_ifStat = 5, RULE_url = 6, RULE_expr = 7, RULE_boolExpr = 8, RULE_numberA = 9, 
+		RULE_numberB = 10, RULE_numberC = 11, RULE_numberD = 12;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"prog", "stat", "expr"
+			"start", "statement", "assign", "loop", "print", "ifStat", "url", "expr", 
+			"boolExpr", "numberA", "numberB", "numberC", "numberD"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'='", "'('", "')'", "'*'", "'/'", "'+'", "'-'"
+			null, "'('", "')'", null, "'+'", "'-'", "'*'", "'/'", "'='", "'&&'", 
+			"'||'", "'=='", "'!='", "'>'", "'<'", "'>='", "'<='", "'true'", "'false'", 
+			"','", "'print'", "'while'", "'if'", "'then'", "'else'", "'fi'", "'do'", 
+			"'.'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, "MUL", "DIV", "ADD", "SUB", "ID", "INT", "NEWLINE", 
+			null, null, null, "NUMBER", "PLUS", "MINUS", "MULT", "DIV", "ASSIGN", 
+			"AND", "OR", "EQ", "NEQ", "GT", "LT", "GTEQ", "LTEQ", "TRUE", "FALSE", 
+			"COMMA", "PRINT", "WHILE", "IF", "THEN", "ELSE", "FI", "DO", "DOT", "ID", 
 			"WS"
 		};
 	}
@@ -90,53 +100,56 @@ public class MyGrammarParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
-	public static class ProgContext extends ParserRuleContext {
-		public List<StatContext> stat() {
-			return getRuleContexts(StatContext.class);
+	public static class StartContext extends ParserRuleContext {
+		public TerminalNode EOF() { return getToken(MyGrammarParser.EOF, 0); }
+		public List<StatementContext> statement() {
+			return getRuleContexts(StatementContext.class);
 		}
-		public StatContext stat(int i) {
-			return getRuleContext(StatContext.class,i);
+		public StatementContext statement(int i) {
+			return getRuleContext(StatementContext.class,i);
 		}
-		public ProgContext(ParserRuleContext parent, int invokingState) {
+		public StartContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_prog; }
+		@Override public int getRuleIndex() { return RULE_start; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterProg(this);
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterStart(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitProg(this);
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitStart(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitProg(this);
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitStart(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final ProgContext prog() throws RecognitionException {
-		ProgContext _localctx = new ProgContext(_ctx, getState());
-		enterRule(_localctx, 0, RULE_prog);
+	public final StartContext start() throws RecognitionException {
+		StartContext _localctx = new StartContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_start);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(7); 
+			setState(29);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			do {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << NUMBER) | (1L << PRINT) | (1L << WHILE) | (1L << IF) | (1L << ID))) != 0)) {
 				{
 				{
-				setState(6);
-				stat();
+				setState(26);
+				statement();
 				}
 				}
-				setState(9); 
+				setState(31);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << ID) | (1L << INT) | (1L << NEWLINE))) != 0) );
+			}
+			setState(32);
+			match(EOF);
 			}
 		}
 		catch (RecognitionException re) {
@@ -150,115 +163,440 @@ public class MyGrammarParser extends Parser {
 		return _localctx;
 	}
 
-	public static class StatContext extends ParserRuleContext {
-		public StatContext(ParserRuleContext parent, int invokingState) {
+	public static class StatementContext extends ParserRuleContext {
+		public AssignContext assign() {
+			return getRuleContext(AssignContext.class,0);
+		}
+		public LoopContext loop() {
+			return getRuleContext(LoopContext.class,0);
+		}
+		public PrintContext print() {
+			return getRuleContext(PrintContext.class,0);
+		}
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public IfStatContext ifStat() {
+			return getRuleContext(IfStatContext.class,0);
+		}
+		public UrlContext url() {
+			return getRuleContext(UrlContext.class,0);
+		}
+		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_stat; }
-	 
-		public StatContext() { }
-		public void copyFrom(StatContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	public static class BlankContext extends StatContext {
-		public TerminalNode NEWLINE() { return getToken(MyGrammarParser.NEWLINE, 0); }
-		public BlankContext(StatContext ctx) { copyFrom(ctx); }
+		@Override public int getRuleIndex() { return RULE_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterBlank(this);
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitBlank(this);
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitBlank(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class PrintExprContext extends StatContext {
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
-		public TerminalNode NEWLINE() { return getToken(MyGrammarParser.NEWLINE, 0); }
-		public PrintExprContext(StatContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterPrintExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitPrintExpr(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitPrintExpr(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class AssignContext extends StatContext {
-		public TerminalNode ID() { return getToken(MyGrammarParser.ID, 0); }
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
-		public TerminalNode NEWLINE() { return getToken(MyGrammarParser.NEWLINE, 0); }
-		public AssignContext(StatContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterAssign(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitAssign(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitAssign(this);
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final StatContext stat() throws RecognitionException {
-		StatContext _localctx = new StatContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_stat);
+	public final StatementContext statement() throws RecognitionException {
+		StatementContext _localctx = new StatementContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_statement);
 		try {
-			setState(20);
+			setState(40);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
 			case 1:
-				_localctx = new PrintExprContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(11);
-				expr(0);
-				setState(12);
-				match(NEWLINE);
+				setState(34);
+				assign();
 				}
 				break;
 			case 2:
-				_localctx = new AssignContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(14);
-				match(ID);
-				setState(15);
-				match(T__0);
-				setState(16);
-				expr(0);
-				setState(17);
-				match(NEWLINE);
+				setState(35);
+				loop();
 				}
 				break;
 			case 3:
-				_localctx = new BlankContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(19);
-				match(NEWLINE);
+				setState(36);
+				print();
 				}
 				break;
+			case 4:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(37);
+				expr(0);
+				}
+				break;
+			case 5:
+				enterOuterAlt(_localctx, 5);
+				{
+				setState(38);
+				ifStat();
+				}
+				break;
+			case 6:
+				enterOuterAlt(_localctx, 6);
+				{
+				setState(39);
+				url();
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class AssignContext extends ParserRuleContext {
+		public AssignContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_assign; }
+	 
+		public AssignContext() { }
+		public void copyFrom(AssignContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class AssignExprContext extends AssignContext {
+		public TerminalNode ID() { return getToken(MyGrammarParser.ID, 0); }
+		public TerminalNode ASSIGN() { return getToken(MyGrammarParser.ASSIGN, 0); }
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public AssignExprContext(AssignContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterAssignExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitAssignExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitAssignExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final AssignContext assign() throws RecognitionException {
+		AssignContext _localctx = new AssignContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_assign);
+		try {
+			_localctx = new AssignExprContext(_localctx);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(42);
+			match(ID);
+			setState(43);
+			match(ASSIGN);
+			setState(44);
+			expr(0);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class LoopContext extends ParserRuleContext {
+		public TerminalNode WHILE() { return getToken(MyGrammarParser.WHILE, 0); }
+		public BoolExprContext boolExpr() {
+			return getRuleContext(BoolExprContext.class,0);
+		}
+		public TerminalNode DO() { return getToken(MyGrammarParser.DO, 0); }
+		public List<StatementContext> statement() {
+			return getRuleContexts(StatementContext.class);
+		}
+		public StatementContext statement(int i) {
+			return getRuleContext(StatementContext.class,i);
+		}
+		public LoopContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_loop; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterLoop(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitLoop(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitLoop(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final LoopContext loop() throws RecognitionException {
+		LoopContext _localctx = new LoopContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_loop);
+		try {
+			int _alt;
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(46);
+			match(WHILE);
+			setState(47);
+			boolExpr();
+			setState(48);
+			match(DO);
+			setState(52);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					{
+					{
+					setState(49);
+					statement();
+					}
+					} 
+				}
+				setState(54);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,2,_ctx);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class PrintContext extends ParserRuleContext {
+		public TerminalNode PRINT() { return getToken(MyGrammarParser.PRINT, 0); }
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public List<TerminalNode> COMMA() { return getTokens(MyGrammarParser.COMMA); }
+		public TerminalNode COMMA(int i) {
+			return getToken(MyGrammarParser.COMMA, i);
+		}
+		public PrintContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_print; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterPrint(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitPrint(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitPrint(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final PrintContext print() throws RecognitionException {
+		PrintContext _localctx = new PrintContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_print);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(55);
+			match(PRINT);
+			setState(56);
+			expr(0);
+			setState(61);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while (_la==COMMA) {
+				{
+				{
+				setState(57);
+				match(COMMA);
+				setState(58);
+				expr(0);
+				}
+				}
+				setState(63);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class IfStatContext extends ParserRuleContext {
+		public TerminalNode IF() { return getToken(MyGrammarParser.IF, 0); }
+		public BoolExprContext boolExpr() {
+			return getRuleContext(BoolExprContext.class,0);
+		}
+		public TerminalNode THEN() { return getToken(MyGrammarParser.THEN, 0); }
+		public List<StatementContext> statement() {
+			return getRuleContexts(StatementContext.class);
+		}
+		public StatementContext statement(int i) {
+			return getRuleContext(StatementContext.class,i);
+		}
+		public TerminalNode FI() { return getToken(MyGrammarParser.FI, 0); }
+		public TerminalNode ELSE() { return getToken(MyGrammarParser.ELSE, 0); }
+		public IfStatContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_ifStat; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterIfStat(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitIfStat(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitIfStat(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final IfStatContext ifStat() throws RecognitionException {
+		IfStatContext _localctx = new IfStatContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_ifStat);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(64);
+			match(IF);
+			setState(65);
+			boolExpr();
+			setState(66);
+			match(THEN);
+			setState(67);
+			statement();
+			setState(70);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==ELSE) {
+				{
+				setState(68);
+				match(ELSE);
+				setState(69);
+				statement();
+				}
+			}
+
+			setState(72);
+			match(FI);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class UrlContext extends ParserRuleContext {
+		public NumberAContext numberA() {
+			return getRuleContext(NumberAContext.class,0);
+		}
+		public List<TerminalNode> DOT() { return getTokens(MyGrammarParser.DOT); }
+		public TerminalNode DOT(int i) {
+			return getToken(MyGrammarParser.DOT, i);
+		}
+		public NumberBContext numberB() {
+			return getRuleContext(NumberBContext.class,0);
+		}
+		public NumberCContext numberC() {
+			return getRuleContext(NumberCContext.class,0);
+		}
+		public NumberDContext numberD() {
+			return getRuleContext(NumberDContext.class,0);
+		}
+		public UrlContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_url; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterUrl(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitUrl(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitUrl(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final UrlContext url() throws RecognitionException {
+		UrlContext _localctx = new UrlContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_url);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(74);
+			numberA();
+			setState(75);
+			match(DOT);
+			setState(76);
+			numberB();
+			setState(77);
+			match(DOT);
+			setState(78);
+			numberC();
+			setState(79);
+			match(DOT);
+			setState(80);
+			numberD();
 			}
 		}
 		catch (RecognitionException re) {
@@ -283,6 +621,23 @@ public class MyGrammarParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	public static class NumberContext extends ExprContext {
+		public TerminalNode NUMBER() { return getToken(MyGrammarParser.NUMBER, 0); }
+		public NumberContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterNumber(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitNumber(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitNumber(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 	public static class ParensContext extends ExprContext {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
@@ -302,7 +657,7 @@ public class MyGrammarParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class MulDivContext extends ExprContext {
+	public static class PlusMinusExprContext extends ExprContext {
 		public Token op;
 		public List<ExprContext> expr() {
 			return getRuleContexts(ExprContext.class);
@@ -310,45 +665,20 @@ public class MyGrammarParser extends Parser {
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public TerminalNode MUL() { return getToken(MyGrammarParser.MUL, 0); }
-		public TerminalNode DIV() { return getToken(MyGrammarParser.DIV, 0); }
-		public MulDivContext(ExprContext ctx) { copyFrom(ctx); }
+		public TerminalNode PLUS() { return getToken(MyGrammarParser.PLUS, 0); }
+		public TerminalNode MINUS() { return getToken(MyGrammarParser.MINUS, 0); }
+		public PlusMinusExprContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterMulDiv(this);
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterPlusMinusExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitMulDiv(this);
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitPlusMinusExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitMulDiv(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class AddSubContext extends ExprContext {
-		public Token op;
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public TerminalNode ADD() { return getToken(MyGrammarParser.ADD, 0); }
-		public TerminalNode SUB() { return getToken(MyGrammarParser.SUB, 0); }
-		public AddSubContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterAddSub(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitAddSub(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitAddSub(this);
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitPlusMinusExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -369,20 +699,28 @@ public class MyGrammarParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class IntContext extends ExprContext {
-		public TerminalNode INT() { return getToken(MyGrammarParser.INT, 0); }
-		public IntContext(ExprContext ctx) { copyFrom(ctx); }
+	public static class MulDivExprContext extends ExprContext {
+		public Token op;
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public TerminalNode MULT() { return getToken(MyGrammarParser.MULT, 0); }
+		public TerminalNode DIV() { return getToken(MyGrammarParser.DIV, 0); }
+		public MulDivExprContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterInt(this);
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterMulDivExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitInt(this);
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitMulDivExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitInt(this);
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitMulDivExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -396,24 +734,24 @@ public class MyGrammarParser extends Parser {
 		int _parentState = getState();
 		ExprContext _localctx = new ExprContext(_ctx, _parentState);
 		ExprContext _prevctx = _localctx;
-		int _startState = 4;
-		enterRecursionRule(_localctx, 4, RULE_expr, _p);
+		int _startState = 14;
+		enterRecursionRule(_localctx, 14, RULE_expr, _p);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(29);
+			setState(89);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case INT:
+			case NUMBER:
 				{
-				_localctx = new IntContext(_localctx);
+				_localctx = new NumberContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(23);
-				match(INT);
+				setState(83);
+				match(NUMBER);
 				}
 				break;
 			case ID:
@@ -421,86 +759,86 @@ public class MyGrammarParser extends Parser {
 				_localctx = new IdContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(24);
+				setState(84);
 				match(ID);
 				}
 				break;
-			case T__1:
+			case T__0:
 				{
 				_localctx = new ParensContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(25);
-				match(T__1);
-				setState(26);
+				setState(85);
+				match(T__0);
+				setState(86);
 				expr(0);
-				setState(27);
-				match(T__2);
+				setState(87);
+				match(T__1);
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(39);
+			setState(99);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(37);
+					setState(97);
 					_errHandler.sync(this);
-					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
+					switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 					case 1:
 						{
-						_localctx = new MulDivContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new MulDivExprContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(31);
+						setState(91);
 						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
-						setState(32);
-						((MulDivContext)_localctx).op = _input.LT(1);
+						setState(92);
+						((MulDivExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==MUL || _la==DIV) ) {
-							((MulDivContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						if ( !(_la==MULT || _la==DIV) ) {
+							((MulDivExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(33);
+						setState(93);
 						expr(6);
 						}
 						break;
 					case 2:
 						{
-						_localctx = new AddSubContext(new ExprContext(_parentctx, _parentState));
+						_localctx = new PlusMinusExprContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(34);
+						setState(94);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(35);
-						((AddSubContext)_localctx).op = _input.LT(1);
+						setState(95);
+						((PlusMinusExprContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==ADD || _la==SUB) ) {
-							((AddSubContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						if ( !(_la==PLUS || _la==MINUS) ) {
+							((PlusMinusExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(36);
+						setState(96);
 						expr(5);
 						}
 						break;
 					}
 					} 
 				}
-				setState(41);
+				setState(101);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
 			}
 			}
 		}
@@ -515,9 +853,468 @@ public class MyGrammarParser extends Parser {
 		return _localctx;
 	}
 
+	public static class BoolExprContext extends ParserRuleContext {
+		public BoolExprContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_boolExpr; }
+	 
+		public BoolExprContext() { }
+		public void copyFrom(BoolExprContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class TrueExprContext extends BoolExprContext {
+		public TerminalNode TRUE() { return getToken(MyGrammarParser.TRUE, 0); }
+		public TrueExprContext(BoolExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterTrueExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitTrueExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitTrueExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class OrExprContext extends BoolExprContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public TerminalNode OR() { return getToken(MyGrammarParser.OR, 0); }
+		public OrExprContext(BoolExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterOrExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitOrExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitOrExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class GtLtExprContext extends BoolExprContext {
+		public Token op;
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public TerminalNode GT() { return getToken(MyGrammarParser.GT, 0); }
+		public TerminalNode LT() { return getToken(MyGrammarParser.LT, 0); }
+		public GtLtExprContext(BoolExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterGtLtExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitGtLtExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitGtLtExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class GteqLteqExprContext extends BoolExprContext {
+		public Token op;
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public TerminalNode GTEQ() { return getToken(MyGrammarParser.GTEQ, 0); }
+		public TerminalNode LTEQ() { return getToken(MyGrammarParser.LTEQ, 0); }
+		public GteqLteqExprContext(BoolExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterGteqLteqExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitGteqLteqExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitGteqLteqExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class FalseExprContext extends BoolExprContext {
+		public TerminalNode FALSE() { return getToken(MyGrammarParser.FALSE, 0); }
+		public FalseExprContext(BoolExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterFalseExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitFalseExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitFalseExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class EqualityExprContext extends BoolExprContext {
+		public Token op;
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public TerminalNode EQ() { return getToken(MyGrammarParser.EQ, 0); }
+		public TerminalNode NEQ() { return getToken(MyGrammarParser.NEQ, 0); }
+		public EqualityExprContext(BoolExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterEqualityExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitEqualityExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitEqualityExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class AndExprContext extends BoolExprContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public TerminalNode AND() { return getToken(MyGrammarParser.AND, 0); }
+		public AndExprContext(BoolExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterAndExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitAndExpr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitAndExpr(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final BoolExprContext boolExpr() throws RecognitionException {
+		BoolExprContext _localctx = new BoolExprContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_boolExpr);
+		int _la;
+		try {
+			setState(124);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
+			case 1:
+				_localctx = new AndExprContext(_localctx);
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(102);
+				expr(0);
+				setState(103);
+				match(AND);
+				setState(104);
+				expr(0);
+				}
+				break;
+			case 2:
+				_localctx = new OrExprContext(_localctx);
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(106);
+				expr(0);
+				setState(107);
+				match(OR);
+				setState(108);
+				expr(0);
+				}
+				break;
+			case 3:
+				_localctx = new EqualityExprContext(_localctx);
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(110);
+				expr(0);
+				setState(111);
+				((EqualityExprContext)_localctx).op = _input.LT(1);
+				_la = _input.LA(1);
+				if ( !(_la==EQ || _la==NEQ) ) {
+					((EqualityExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(112);
+				expr(0);
+				}
+				break;
+			case 4:
+				_localctx = new GtLtExprContext(_localctx);
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(114);
+				expr(0);
+				setState(115);
+				((GtLtExprContext)_localctx).op = _input.LT(1);
+				_la = _input.LA(1);
+				if ( !(_la==GT || _la==LT) ) {
+					((GtLtExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(116);
+				expr(0);
+				}
+				break;
+			case 5:
+				_localctx = new GteqLteqExprContext(_localctx);
+				enterOuterAlt(_localctx, 5);
+				{
+				setState(118);
+				expr(0);
+				setState(119);
+				((GteqLteqExprContext)_localctx).op = _input.LT(1);
+				_la = _input.LA(1);
+				if ( !(_la==GTEQ || _la==LTEQ) ) {
+					((GteqLteqExprContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(120);
+				expr(0);
+				}
+				break;
+			case 6:
+				_localctx = new TrueExprContext(_localctx);
+				enterOuterAlt(_localctx, 6);
+				{
+				setState(122);
+				match(TRUE);
+				}
+				break;
+			case 7:
+				_localctx = new FalseExprContext(_localctx);
+				enterOuterAlt(_localctx, 7);
+				{
+				setState(123);
+				match(FALSE);
+				}
+				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class NumberAContext extends ParserRuleContext {
+		public TerminalNode NUMBER() { return getToken(MyGrammarParser.NUMBER, 0); }
+		public NumberAContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_numberA; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterNumberA(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitNumberA(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitNumberA(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final NumberAContext numberA() throws RecognitionException {
+		NumberAContext _localctx = new NumberAContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_numberA);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(126);
+			match(NUMBER);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class NumberBContext extends ParserRuleContext {
+		public TerminalNode NUMBER() { return getToken(MyGrammarParser.NUMBER, 0); }
+		public NumberBContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_numberB; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterNumberB(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitNumberB(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitNumberB(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final NumberBContext numberB() throws RecognitionException {
+		NumberBContext _localctx = new NumberBContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_numberB);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(128);
+			match(NUMBER);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class NumberCContext extends ParserRuleContext {
+		public TerminalNode NUMBER() { return getToken(MyGrammarParser.NUMBER, 0); }
+		public NumberCContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_numberC; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterNumberC(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitNumberC(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitNumberC(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final NumberCContext numberC() throws RecognitionException {
+		NumberCContext _localctx = new NumberCContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_numberC);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(130);
+			match(NUMBER);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class NumberDContext extends ParserRuleContext {
+		public TerminalNode NUMBER() { return getToken(MyGrammarParser.NUMBER, 0); }
+		public NumberDContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_numberD; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).enterNumberD(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof MyGrammarListener ) ((MyGrammarListener)listener).exitNumberD(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MyGrammarVisitor ) return ((MyGrammarVisitor<? extends T>)visitor).visitNumberD(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final NumberDContext numberD() throws RecognitionException {
+		NumberDContext _localctx = new NumberDContext(_ctx, getState());
+		enterRule(_localctx, 24, RULE_numberD);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(132);
+			match(NUMBER);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
-		case 2:
+		case 7:
 			return expr_sempred((ExprContext)_localctx, predIndex);
 		}
 		return true;
@@ -533,19 +1330,41 @@ public class MyGrammarParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\r-\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\3\2\6\2\n\n\2\r\2\16\2\13\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
-		"\3\5\3\27\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4 \n\4\3\4\3\4\3\4\3\4\3\4"+
-		"\3\4\7\4(\n\4\f\4\16\4+\13\4\3\4\2\3\6\5\2\4\6\2\4\3\2\6\7\3\2\b\t\2\60"+
-		"\2\t\3\2\2\2\4\26\3\2\2\2\6\37\3\2\2\2\b\n\5\4\3\2\t\b\3\2\2\2\n\13\3"+
-		"\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2\f\3\3\2\2\2\r\16\5\6\4\2\16\17\7\f\2"+
-		"\2\17\27\3\2\2\2\20\21\7\n\2\2\21\22\7\3\2\2\22\23\5\6\4\2\23\24\7\f\2"+
-		"\2\24\27\3\2\2\2\25\27\7\f\2\2\26\r\3\2\2\2\26\20\3\2\2\2\26\25\3\2\2"+
-		"\2\27\5\3\2\2\2\30\31\b\4\1\2\31 \7\13\2\2\32 \7\n\2\2\33\34\7\4\2\2\34"+
-		"\35\5\6\4\2\35\36\7\5\2\2\36 \3\2\2\2\37\30\3\2\2\2\37\32\3\2\2\2\37\33"+
-		"\3\2\2\2 )\3\2\2\2!\"\f\7\2\2\"#\t\2\2\2#(\5\6\4\b$%\f\6\2\2%&\t\3\2\2"+
-		"&(\5\6\4\7\'!\3\2\2\2\'$\3\2\2\2(+\3\2\2\2)\'\3\2\2\2)*\3\2\2\2*\7\3\2"+
-		"\2\2+)\3\2\2\2\7\13\26\37\')";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\37\u0089\4\2\t\2"+
+		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
+		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\3\2\7\2\36\n\2\f\2\16\2!\13\2\3\2\3\2"+
+		"\3\3\3\3\3\3\3\3\3\3\3\3\5\3+\n\3\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\7\5"+
+		"\65\n\5\f\5\16\58\13\5\3\6\3\6\3\6\3\6\7\6>\n\6\f\6\16\6A\13\6\3\7\3\7"+
+		"\3\7\3\7\3\7\3\7\5\7I\n\7\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\b\3\t"+
+		"\3\t\3\t\3\t\3\t\3\t\3\t\5\t\\\n\t\3\t\3\t\3\t\3\t\3\t\3\t\7\td\n\t\f"+
+		"\t\16\tg\13\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n"+
+		"\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\5\n\177\n\n\3\13\3\13\3\f\3\f\3\r\3\r"+
+		"\3\16\3\16\3\16\2\3\20\17\2\4\6\b\n\f\16\20\22\24\26\30\32\2\7\3\2\b\t"+
+		"\3\2\6\7\3\2\r\16\3\2\17\20\3\2\21\22\2\u008e\2\37\3\2\2\2\4*\3\2\2\2"+
+		"\6,\3\2\2\2\b\60\3\2\2\2\n9\3\2\2\2\fB\3\2\2\2\16L\3\2\2\2\20[\3\2\2\2"+
+		"\22~\3\2\2\2\24\u0080\3\2\2\2\26\u0082\3\2\2\2\30\u0084\3\2\2\2\32\u0086"+
+		"\3\2\2\2\34\36\5\4\3\2\35\34\3\2\2\2\36!\3\2\2\2\37\35\3\2\2\2\37 \3\2"+
+		"\2\2 \"\3\2\2\2!\37\3\2\2\2\"#\7\2\2\3#\3\3\2\2\2$+\5\6\4\2%+\5\b\5\2"+
+		"&+\5\n\6\2\'+\5\20\t\2(+\5\f\7\2)+\5\16\b\2*$\3\2\2\2*%\3\2\2\2*&\3\2"+
+		"\2\2*\'\3\2\2\2*(\3\2\2\2*)\3\2\2\2+\5\3\2\2\2,-\7\36\2\2-.\7\n\2\2./"+
+		"\5\20\t\2/\7\3\2\2\2\60\61\7\27\2\2\61\62\5\22\n\2\62\66\7\34\2\2\63\65"+
+		"\5\4\3\2\64\63\3\2\2\2\658\3\2\2\2\66\64\3\2\2\2\66\67\3\2\2\2\67\t\3"+
+		"\2\2\28\66\3\2\2\29:\7\26\2\2:?\5\20\t\2;<\7\25\2\2<>\5\20\t\2=;\3\2\2"+
+		"\2>A\3\2\2\2?=\3\2\2\2?@\3\2\2\2@\13\3\2\2\2A?\3\2\2\2BC\7\30\2\2CD\5"+
+		"\22\n\2DE\7\31\2\2EH\5\4\3\2FG\7\32\2\2GI\5\4\3\2HF\3\2\2\2HI\3\2\2\2"+
+		"IJ\3\2\2\2JK\7\33\2\2K\r\3\2\2\2LM\5\24\13\2MN\7\35\2\2NO\5\26\f\2OP\7"+
+		"\35\2\2PQ\5\30\r\2QR\7\35\2\2RS\5\32\16\2S\17\3\2\2\2TU\b\t\1\2U\\\7\5"+
+		"\2\2V\\\7\36\2\2WX\7\3\2\2XY\5\20\t\2YZ\7\4\2\2Z\\\3\2\2\2[T\3\2\2\2["+
+		"V\3\2\2\2[W\3\2\2\2\\e\3\2\2\2]^\f\7\2\2^_\t\2\2\2_d\5\20\t\b`a\f\6\2"+
+		"\2ab\t\3\2\2bd\5\20\t\7c]\3\2\2\2c`\3\2\2\2dg\3\2\2\2ec\3\2\2\2ef\3\2"+
+		"\2\2f\21\3\2\2\2ge\3\2\2\2hi\5\20\t\2ij\7\13\2\2jk\5\20\t\2k\177\3\2\2"+
+		"\2lm\5\20\t\2mn\7\f\2\2no\5\20\t\2o\177\3\2\2\2pq\5\20\t\2qr\t\4\2\2r"+
+		"s\5\20\t\2s\177\3\2\2\2tu\5\20\t\2uv\t\5\2\2vw\5\20\t\2w\177\3\2\2\2x"+
+		"y\5\20\t\2yz\t\6\2\2z{\5\20\t\2{\177\3\2\2\2|\177\7\23\2\2}\177\7\24\2"+
+		"\2~h\3\2\2\2~l\3\2\2\2~p\3\2\2\2~t\3\2\2\2~x\3\2\2\2~|\3\2\2\2~}\3\2\2"+
+		"\2\177\23\3\2\2\2\u0080\u0081\7\5\2\2\u0081\25\3\2\2\2\u0082\u0083\7\5"+
+		"\2\2\u0083\27\3\2\2\2\u0084\u0085\7\5\2\2\u0085\31\3\2\2\2\u0086\u0087"+
+		"\7\5\2\2\u0087\33\3\2\2\2\13\37*\66?H[ce~";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

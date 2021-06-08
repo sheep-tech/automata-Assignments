@@ -1,4 +1,4 @@
-// Generated from C:/Users/buona/Documents/Git/autassignments\MyGrammar.g4 by ANTLR 4.9.1
+// Generated from C:/Users/buona/Documents/Git/Automata Assignment 3\MyGrammar.g4 by ANTLR 4.9.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -15,49 +15,97 @@ public class MyGrammarBaseListener implements MyGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProg(MyGrammarParser.ProgContext ctx) { }
+	@Override public void enterStart(MyGrammarParser.StartContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProg(MyGrammarParser.ProgContext ctx) { }
+	@Override public void exitStart(MyGrammarParser.StartContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrintExpr(MyGrammarParser.PrintExprContext ctx) { }
+	@Override public void enterStatement(MyGrammarParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrintExpr(MyGrammarParser.PrintExprContext ctx) { }
+	@Override public void exitStatement(MyGrammarParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssign(MyGrammarParser.AssignContext ctx) { }
+	@Override public void enterAssignExpr(MyGrammarParser.AssignExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssign(MyGrammarParser.AssignContext ctx) { }
+	@Override public void exitAssignExpr(MyGrammarParser.AssignExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlank(MyGrammarParser.BlankContext ctx) { }
+	@Override public void enterLoop(MyGrammarParser.LoopContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBlank(MyGrammarParser.BlankContext ctx) { }
+	@Override public void exitLoop(MyGrammarParser.LoopContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPrint(MyGrammarParser.PrintContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPrint(MyGrammarParser.PrintContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIfStat(MyGrammarParser.IfStatContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIfStat(MyGrammarParser.IfStatContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterUrl(MyGrammarParser.UrlContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitUrl(MyGrammarParser.UrlContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumber(MyGrammarParser.NumberContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumber(MyGrammarParser.NumberContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -75,25 +123,13 @@ public class MyGrammarBaseListener implements MyGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMulDiv(MyGrammarParser.MulDivContext ctx) { }
+	@Override public void enterPlusMinusExpr(MyGrammarParser.PlusMinusExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMulDiv(MyGrammarParser.MulDivContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAddSub(MyGrammarParser.AddSubContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAddSub(MyGrammarParser.AddSubContext ctx) { }
+	@Override public void exitPlusMinusExpr(MyGrammarParser.PlusMinusExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -111,13 +147,145 @@ public class MyGrammarBaseListener implements MyGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInt(MyGrammarParser.IntContext ctx) { }
+	@Override public void enterMulDivExpr(MyGrammarParser.MulDivExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInt(MyGrammarParser.IntContext ctx) { }
+	@Override public void exitMulDivExpr(MyGrammarParser.MulDivExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAndExpr(MyGrammarParser.AndExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAndExpr(MyGrammarParser.AndExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOrExpr(MyGrammarParser.OrExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOrExpr(MyGrammarParser.OrExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEqualityExpr(MyGrammarParser.EqualityExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEqualityExpr(MyGrammarParser.EqualityExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterGtLtExpr(MyGrammarParser.GtLtExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitGtLtExpr(MyGrammarParser.GtLtExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterGteqLteqExpr(MyGrammarParser.GteqLteqExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitGteqLteqExpr(MyGrammarParser.GteqLteqExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTrueExpr(MyGrammarParser.TrueExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTrueExpr(MyGrammarParser.TrueExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFalseExpr(MyGrammarParser.FalseExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFalseExpr(MyGrammarParser.FalseExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumberA(MyGrammarParser.NumberAContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumberA(MyGrammarParser.NumberAContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumberB(MyGrammarParser.NumberBContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumberB(MyGrammarParser.NumberBContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumberC(MyGrammarParser.NumberCContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumberC(MyGrammarParser.NumberCContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumberD(MyGrammarParser.NumberDContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumberD(MyGrammarParser.NumberDContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

@@ -6,7 +6,7 @@
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/MyGrammar.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="C:\Users\buona\Documents\Git\autassignments" />
+          <option name="outputDir" value="C:\Users\buona\Documents\Git\Automata Assignment 3" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
           <option name="pkg" value="" />
@@ -16,7 +16,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

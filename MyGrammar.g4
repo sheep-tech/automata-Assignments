@@ -1,157 +1,65 @@
-//grammar MyGrammar; // rename to distinguish from Expr.g4
-//
-//prog:   stat+
-//    |
-//;
-//
-//stat:   ifStat                      # ifStatement
-//    |ID '=' expr NEWLINE         # assign
-//    |   NEWLINE                     # blank
-//    ;
-//
-//expr:   expr op=('*'|'/') expr      # MulDiv
-//    |   expr op=('+'|'-') expr      # AddSub
-//    |   INT                         # int
-//    |   ID                          # id
-//    |   '(' expr ')'                # parens
-//    ;
-//
-//ifStat: IF '('boolExpr')' '{'NEWLINE* expr+ NEWLINE*'}';
-//
-//boolExpr: boolExpr ISEQL boolExpr               # EqlCheck
-//    |     boolExpr as=('>' | '<') boolExpr    # GreatLessCheck
-//    |     boolExpr (ISGTE | ISLTE) boolExpr      # GreatLessEqlCheck
-//    |     INT                         # checkInt
-//    |     ID                          # checkId
-//    |     '(' boolExpr ')'                # checkParens
-//    ;
-//
-//MUL :   '*' ; // assigns token name to '*' used above in grammar
-//DIV :   '/' ;
-//ADD :   '+' ;
-//SUB :   '-' ;
-//// boolean operations
-//ISEQL : '==';
-//ISGT  : '>';
-//ISLT  : '<';
-//ISGTE  : '>=';
-//ISLTE  : '<=';
-//
-//ID  :   [a-zA-Z]+ ;      // match identifiers
-//INT :   [0-9]+ ;         // match integers
-//IF  : 'if';
-//NEWLINE:'\r'? '\n' ;     // return newlines to parser (is end-statement signal)
-//WS  :   [ \t]+ -> skip ; // toss out whitespace
-
 grammar MyGrammar;
 
-parse: block EOF;
+start		: statement* EOF;
 
-block: stat*;
+statement	: assign | loop | print | expr | ifStat | url;
 
-stat: assignment
- | if_stat
- | while_stat
- ;
+assign      : ID ASSIGN expr #assignExpr;
 
-assignment
- : ID ASSIGN expr
- ;
+loop		: WHILE boolExpr DO statement*;
 
-if_stat
-: IF condition_block (ELSE IF condition_block)* (ELSE stat_block)?
- ;
+print		: PRINT expr ( COMMA expr )*;
 
-condition_block
- : expr stat_block
- ;
+ifStat		: IF boolExpr THEN statement ( ELSE statement )? FI;
 
-stat_block
- : OBRACE block CBRACE
- | stat
- ;
+url			: numberA DOT numberB DOT numberC DOT numberD;
 
-while_stat
- : WHILE expr stat_block
- ;
+expr		: expr op=(MULT|DIV) expr	# mulDivExpr
+            | expr op=(PLUS|MINUS) expr	# plusMinusExpr
+			| NUMBER			# number
+			| ID				# id
+			| '(' expr ')'      # parens
+;
 
-log
- : LOG expr SCOL
- ;
+boolExpr    : expr AND expr		        # andExpr
+            | expr OR expr              # orExpr
+            | expr op=(EQ|NEQ) expr     # equalityExpr
+            | expr op=(GT|LT) expr      # gtLtExpr
+            | expr op=(GTEQ|LTEQ) expr  # gteqLteqExpr
+            | TRUE                      # trueExpr
+            | FALSE                     # falseExpr
+;
 
-expr
- : expr POW<assoc=right> expr           #powExpr
- | MINUS expr                           #unaryMinusExpr
- | NOT expr                             #notExpr
- | expr op=(MULT | DIV | MOD) expr      #multiplicationExpr
- | expr op=(PLUS | MINUS) expr          #additiveExpr
- | expr op=(LTEQ | GTEQ | LT | GT) expr #relationalExpr
- | expr op=(EQ | NEQ) expr              #equalityExpr
- | expr AND expr                        #andExpr
- | expr OR expr                         #orExpr
- | atom                                 #atomExpr
- ;
+numberA		: NUMBER;
+numberB		: NUMBER;
+numberC		: NUMBER;
+numberD		: NUMBER;
 
-atom
- : OPAR expr CPAR #parExpr
- | (INT | FLOAT)  #numberAtom
- | (TRUE | FALSE) #booleanAtom
- | ID             #idAtom
- | STRING         #stringAtom
- | NIL            #nilAtom
- ;
-
-OR : '||';
+NUMBER		: [0-9]+ ; 
+PLUS : '+';
+MINUS : '-';
+MULT : '*';
+DIV : '/';
+ASSIGN : '=';
 AND : '&&';
+OR : '||';
 EQ : '==';
 NEQ : '!=';
 GT : '>';
 LT : '<';
 GTEQ : '>=';
 LTEQ : '<=';
-PLUS : '+';
-MINUS : '-';
-MULT : '*';
-DIV : '/';
-NOT : '!';
-
-ASSIGN : '=';
-OPAR : '(';
-CPAR : ')';
-OBRACE : '{';
-CBRACE : '}';
-
-TRUE : 'true';
-FALSE : 'false';
-IF : 'if';
-ELSE : 'else';
-WHILE : 'while';
-
-ID
- : [a-zA-Z_] [a-zA-Z_0-9]*
- ;
-
-INT
- : [0-9]+
- ;
-
-FLOAT
- : [0-9]+ '.' [0-9]*
- | '.' [0-9]+
- ;
-
-STRING
- : '"' (~["\r\n] | '""')* '"'
- ;
-
-COMMENT
- : '#' ~[\r\n]* -> skip
- ;
-
-SPACE
- : [ \t\r\n] -> skip
- ;
-
-OTHER
- : .
- ;
+TRUE        : 'true';
+FALSE       : 'false';
+COMMA		: ',';
+PRINT		: 'print';
+WHILE		: 'while';
+IF			: 'if';
+THEN		: 'then';
+ELSE		: 'else';
+FI			: 'fi';
+DO			: 'do';
+DOT			: '.';
+//TEXT		: '"' ~('\r' | '\n' | '"')* '"';
+ID 			: [_A-Za-z][A-Za-z_!0-9.]* ; 
+WS 			: [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
