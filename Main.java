@@ -1,29 +1,6 @@
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.*;
-import gen.*;
-
-class MyListener extends MyGrammarBaseListener
-{
-	@Override public void enterMyStart(MyGrammarParser.MyStartContext ctx) 
-	{ 
-		// TODO: investigate contents of 'ctx'
-		System.err.println("enterMyStart()");
-	}
-	
-	@Override public void exitMyStart(MyGrammarParser.MyStartContext ctx) 
-	{ 
-		// TODO: investigate contents of 'ctx'
-		System.err.println("exitMyStart()");
-	}
-	
-	@Override public void visitTerminal(TerminalNode node) 
-	{ 
-		System.err.println("terminal-node: '" + node.getText() + "'");
-		// TODO: print line+column, token's type, etc.
-	}
-	// TODO: override other methods of 'MyGrammarBaseListener'
-}
 
 public class Main 
 {
@@ -34,13 +11,11 @@ public class Main
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-		// TODO: print the lexer's vocabulary and the actual list of tokens 
-		
         MyGrammarParser parser = new MyGrammarParser(tokens);
 
-        ParseTree tree = parser.myStart();
-		
-		MyListener m = new MyListener();
-		ParseTreeWalker.DEFAULT.walk(m, tree);
+        ParseTree tree = parser.start();
+
+        MyVisitor visitor = new MyVisitor();
+        visitor.visit(tree);
     }
 }
