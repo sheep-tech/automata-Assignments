@@ -6,7 +6,7 @@ public class Main
 {
     public static void main(String[] args) throws Exception 
 	{
-        CharStream input = CharStreams.fromStream(System.in);
+        CharStream input = CharStreams.fromString("print 10");
 		MyGrammarLexer lexer = new MyGrammarLexer(input);
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);

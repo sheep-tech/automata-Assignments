@@ -9,9 +9,9 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
     @Override
     public Value visitPrint(MyGrammarParser.PrintContext ctx) {
         for (MyGrammarParser.ExprContext expr : ctx.expr()) {
-            String id = expr.getText(); // id is left-hand side of '='
+//            String id = expr.getText(); // id is left-hand side of '='
             Value value = visit(expr);
-            System.out.println(id + " = " + value); // print the assignment (e.g. a = 7)
+            System.out.println(value); // print the assignment (e.g. a = 7)
         }
 
         return Value.VOID;
