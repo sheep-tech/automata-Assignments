@@ -13,7 +13,7 @@ public class Main
 
         MyGrammarParser parser = new MyGrammarParser(tokens);
 
-        ParseTree tree = parser.start();
+        ParseTree tree = parser.myStart();
 
         MyVisitor visitor = new MyVisitor();
         visitor.visit(tree);

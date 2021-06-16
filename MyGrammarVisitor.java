@@ -10,11 +10,11 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface MyGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link MyGrammarParser#start}.
+	 * Visit a parse tree produced by {@link MyGrammarParser#myStart}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStart(MyGrammarParser.StartContext ctx);
+	T visitMyStart(MyGrammarParser.MyStartContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MyGrammarParser#output}.
 	 * @param ctx the parse tree
@@ -40,11 +40,56 @@ public interface MyGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitModel_response(MyGrammarParser.Model_responseContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MyGrammarParser#function_var}.
+	 * Visit a parse tree produced by {@link MyGrammarParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFunction_var(MyGrammarParser.Function_varContext ctx);
+	T visitStatement(MyGrammarParser.StatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MyGrammarParser#ite}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIte(MyGrammarParser.IteContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MyGrammarParser#then_result}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitThen_result(MyGrammarParser.Then_resultContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MyGrammarParser#else_result}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitElse_result(MyGrammarParser.Else_resultContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code andNestedOper}
+	 * labeled alternative in {@link MyGrammarParser#oper}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAndNestedOper(MyGrammarParser.AndNestedOperContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code eqNestedOper}
+	 * labeled alternative in {@link MyGrammarParser#oper}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEqNestedOper(MyGrammarParser.EqNestedOperContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code valueOper}
+	 * labeled alternative in {@link MyGrammarParser#oper}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitValueOper(MyGrammarParser.ValueOperContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MyGrammarParser#formal_Param}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFormal_Param(MyGrammarParser.Formal_ParamContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MyGrammarParser#print}.
 	 * @param ctx the parse tree

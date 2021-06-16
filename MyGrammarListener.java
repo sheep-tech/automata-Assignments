@@ -7,15 +7,15 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface MyGrammarListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link MyGrammarParser#start}.
+	 * Enter a parse tree produced by {@link MyGrammarParser#myStart}.
 	 * @param ctx the parse tree
 	 */
-	void enterStart(MyGrammarParser.StartContext ctx);
+	void enterMyStart(MyGrammarParser.MyStartContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link MyGrammarParser#start}.
+	 * Exit a parse tree produced by {@link MyGrammarParser#myStart}.
 	 * @param ctx the parse tree
 	 */
-	void exitStart(MyGrammarParser.StartContext ctx);
+	void exitMyStart(MyGrammarParser.MyStartContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link MyGrammarParser#output}.
 	 * @param ctx the parse tree
@@ -57,15 +57,91 @@ public interface MyGrammarListener extends ParseTreeListener {
 	 */
 	void exitModel_response(MyGrammarParser.Model_responseContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link MyGrammarParser#function_var}.
+	 * Enter a parse tree produced by {@link MyGrammarParser#statement}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunction_var(MyGrammarParser.Function_varContext ctx);
+	void enterStatement(MyGrammarParser.StatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link MyGrammarParser#function_var}.
+	 * Exit a parse tree produced by {@link MyGrammarParser#statement}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunction_var(MyGrammarParser.Function_varContext ctx);
+	void exitStatement(MyGrammarParser.StatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MyGrammarParser#ite}.
+	 * @param ctx the parse tree
+	 */
+	void enterIte(MyGrammarParser.IteContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MyGrammarParser#ite}.
+	 * @param ctx the parse tree
+	 */
+	void exitIte(MyGrammarParser.IteContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MyGrammarParser#then_result}.
+	 * @param ctx the parse tree
+	 */
+	void enterThen_result(MyGrammarParser.Then_resultContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MyGrammarParser#then_result}.
+	 * @param ctx the parse tree
+	 */
+	void exitThen_result(MyGrammarParser.Then_resultContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MyGrammarParser#else_result}.
+	 * @param ctx the parse tree
+	 */
+	void enterElse_result(MyGrammarParser.Else_resultContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MyGrammarParser#else_result}.
+	 * @param ctx the parse tree
+	 */
+	void exitElse_result(MyGrammarParser.Else_resultContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code andNestedOper}
+	 * labeled alternative in {@link MyGrammarParser#oper}.
+	 * @param ctx the parse tree
+	 */
+	void enterAndNestedOper(MyGrammarParser.AndNestedOperContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code andNestedOper}
+	 * labeled alternative in {@link MyGrammarParser#oper}.
+	 * @param ctx the parse tree
+	 */
+	void exitAndNestedOper(MyGrammarParser.AndNestedOperContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code eqNestedOper}
+	 * labeled alternative in {@link MyGrammarParser#oper}.
+	 * @param ctx the parse tree
+	 */
+	void enterEqNestedOper(MyGrammarParser.EqNestedOperContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code eqNestedOper}
+	 * labeled alternative in {@link MyGrammarParser#oper}.
+	 * @param ctx the parse tree
+	 */
+	void exitEqNestedOper(MyGrammarParser.EqNestedOperContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code valueOper}
+	 * labeled alternative in {@link MyGrammarParser#oper}.
+	 * @param ctx the parse tree
+	 */
+	void enterValueOper(MyGrammarParser.ValueOperContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code valueOper}
+	 * labeled alternative in {@link MyGrammarParser#oper}.
+	 * @param ctx the parse tree
+	 */
+	void exitValueOper(MyGrammarParser.ValueOperContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MyGrammarParser#formal_Param}.
+	 * @param ctx the parse tree
+	 */
+	void enterFormal_Param(MyGrammarParser.Formal_ParamContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MyGrammarParser#formal_Param}.
+	 * @param ctx the parse tree
+	 */
+	void exitFormal_Param(MyGrammarParser.Formal_ParamContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link MyGrammarParser#print}.
 	 * @param ctx the parse tree

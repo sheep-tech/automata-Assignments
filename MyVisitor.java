@@ -6,18 +6,93 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
     /** "memory" for our calculator; variable/value pairs go here */
     Map<String, Value> memory = new TreeMap<>();
 
+    char pos1;
+    char pos2;
+
+//    @Override
+//    public Value visitModel_response(MyGrammarParser.Model_responseContext ctx) {
+//        String id = ctx.VAR_ID().getText();
+//        Value value = new Value(ctx.statement().VALUE());
+//        memory.put(id, value);
+//
+//        return value;
+//    }
+
     @Override
-    public Value visitModel_response(MyGrammarParser.Model_responseContext ctx) {
-        String id = ctx.function_var().getText();
-        Value value = new Value(ctx.VALUE());
-        memory.put(id, value);
+    public Value visitIte(MyGrammarParser.IteContext ctx) {
+        visit(ctx.oper());
+        // create arbitrary id
+        String cellId = "b" + pos1 + pos2;
+        // get the then statement value
+        Value cellValue = visit(ctx.then_result());
+
+        memory.put(cellId, cellValue);
+
+        if (!ctx.else_result().statement().getChild(0).equals(MyGrammarParser.VALUE)) {
+            visit(ctx.else_result());
+        }
+
+        return Value.VOID;
+    }
+
+    @Override
+    public Value visitThen_result(MyGrammarParser.Then_resultContext ctx) {
+        return new Value(ctx.getText());
+    }
+
+    @Override
+    public Value visitAndNestedOper(MyGrammarParser.AndNestedOperContext ctx) {
+        Value left = visit(ctx.oper(0));
+        Value right = visit(ctx.oper(1));
+
+//        if (left.asBoolean() && right.asBoolean())
+//            return new Value(true);
+//        else
+//            return new Value(false);
+        pos1 = left.asString().charAt(0);
+        pos2 = right.asString().charAt(0);
+
+        return Value.VOID;
+    }
+
+    @Override
+    public Value visitEqNestedOper(MyGrammarParser.EqNestedOperContext ctx) {
+        // arbitrary return the right oper value which is the sudoku cell position
+        Value left = visit(ctx.oper(0));
+        Value right = visit(ctx.oper(1));
+
+        // check variable type (boolean || double)
+//        if (left.asDouble() == right.asDouble())
+//            return new Value(true);
+//        else
+//            return new Value(false);
+
+        return right;
+    }
+
+
+    @Override
+    public Value visitValueOper(MyGrammarParser.ValueOperContext ctx) {
+        Value value;
+        if (ctx.val.getType() == MyGrammarParser.VALUE)
+            value = new Value(ctx.getText());
+        else
+            value = memory.get(ctx.getText());
 
         return value;
     }
 
+
+
     /** print statement */
     @Override
     public Value visitPrint(MyGrammarParser.PrintContext ctx) {
+        defFunPrint();
+
+        return Value.VOID;
+    }
+
+    private void defFunPrint() {
         int rowIndex = 1;
 
         System.out.println("+---+---+---+");
@@ -40,8 +115,6 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
             }
             printNewLine(id);
         }
-
-        return Value.VOID;
     }
 
     private void printNewLine(String id) {

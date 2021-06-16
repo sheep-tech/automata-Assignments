@@ -1,165 +1,87 @@
 sat
 (model
-  (define-fun a88 () Int
-    5)
-  (define-fun a16 () Int
-    6)
-  (define-fun a57 () Int
-    9)
-  (define-fun a65 () Int
-    7)
-  (define-fun a19 () Int
-    2)
-  (define-fun a78 () Int
-    6)
-  (define-fun a68 () Int
-    4)
-  (define-fun a31 () Int
-    8)
-  (define-fun a12 () Int
-    5)
-  (define-fun a96 () Int
-    4)
-  (define-fun a32 () Int
-    6)
-  (define-fun a15 () Int
-    3)
-  (define-fun a79 () Int
-    9)
-  (define-fun a99 () Int
-    7)
-  (define-fun a73 () Int
-    4)
-  (define-fun a42 () Int
-    9)
-  (define-fun a26 () Int
-    5)
-  (define-fun a13 () Int
-    7)
-  (define-fun a35 () Int
-    9)
-  (define-fun a87 () Int
-    2)
-  (define-fun a37 () Int
-    4)
-  (define-fun a44 () Int
-    8)
-  (define-fun a14 () Int
-    4)
-  (define-fun a27 () Int
-    7)
-  (define-fun a94 () Int
-    9)
-  (define-fun a97 () Int
-    3)
-  (define-fun a75 () Int
-    5)
-  (define-fun a53 () Int
-    3)
-  (define-fun a77 () Int
-    1)
-  (define-fun a22 () Int
-    3)
-  (define-fun a33 () Int
-    2)
-  (define-fun a18 () Int
-    1)
-  (define-fun a82 () Int
-    8)
-  (define-fun a47 () Int
-    5)
-  (define-fun a76 () Int
-    8)
-  (define-fun a56 () Int
-    2)
-  (define-fun a34 () Int
-    1)
-  (define-fun a91 () Int
-    6)
-  (define-fun a69 () Int
-    3)
-  (define-fun a66 () Int
-    9)
-  (define-fun a41 () Int
-    7)
-  (define-fun a45 () Int
-    4)
-  (define-fun a63 () Int
-    8)
-  (define-fun a23 () Int
-    1)
-  (define-fun a39 () Int
-    5)
-  (define-fun a71 () Int
-    2)
-  (define-fun a92 () Int
-    1)
-  (define-fun a83 () Int
-    9)
-  (define-fun a28 () Int
-    9)
-  (define-fun a98 () Int
-    8)
-  (define-fun a54 () Int
-    6)
-  (define-fun a11 () Int
-    9)
-  (define-fun a95 () Int
-    2)
-  (define-fun a84 () Int
-    7)
-  (define-fun a93 () Int
-    5)
-  (define-fun a89 () Int
-    4)
-  (define-fun a86 () Int
-    1)
-  (define-fun a85 () Int
-    6)
-  (define-fun a81 () Int
-    3)
-  (define-fun a74 () Int
-    3)
-  (define-fun a72 () Int
-    7)
-  (define-fun a67 () Int
-    6)
-  (define-fun a64 () Int
-    5)
-  (define-fun a62 () Int
-    2)
-  (define-fun a61 () Int
-    1)
-  (define-fun a59 () Int
-    8)
-  (define-fun a58 () Int
-    7)
-  (define-fun a55 () Int
-    1)
-  (define-fun a52 () Int
-    4)
-  (define-fun a51 () Int
-    5)
-  (define-fun a49 () Int
-    1)
-  (define-fun a48 () Int
-    2)
-  (define-fun a46 () Int
-    3)
-  (define-fun a43 () Int
-    6)
-  (define-fun a38 () Int
-    3)
-  (define-fun a36 () Int
-    7)
-  (define-fun a29 () Int
-    6)
-  (define-fun a25 () Int
-    8)
-  (define-fun a24 () Int
-    2)
-  (define-fun a21 () Int
-    4)
-  (define-fun a17 () Int
-    8)
+  (define-fun b ((x!0 Int) (x!1 Int)) Int
+    (ite (and (= x!0 1) (= x!1 1)) 6
+    (ite (and (= x!0 1) (= x!1 2)) 9
+    (ite (and (= x!0 1) (= x!1 3)) 5
+    (ite (and (= x!0 1) (= x!1 4)) 3
+    (ite (and (= x!0 1) (= x!1 5)) 4
+    (ite (and (= x!0 1) (= x!1 6)) 1
+    (ite (and (= x!0 1) (= x!1 8)) 7
+    (ite (and (= x!0 1) (= x!1 9)) 2
+    (ite (and (= x!0 2) (= x!1 2)) 3
+    (ite (and (= x!0 2) (= x!1 3)) 7
+    (ite (and (= x!0 2) (= x!1 6)) 5
+    (ite (and (= x!0 2) (= x!1 7)) 9
+    (ite (and (= x!0 2) (= x!1 8)) 1
+    (ite (and (= x!0 3) (= x!1 1)) 1
+    (ite (and (= x!0 3) (= x!1 2)) 8
+    (ite (and (= x!0 3) (= x!1 3)) 2
+    (ite (and (= x!0 3) (= x!1 4)) 9
+    (ite (and (= x!0 3) (= x!1 5)) 6
+    (ite (and (= x!0 3) (= x!1 7)) 5
+    (ite (and (= x!0 3) (= x!1 9)) 4
+    (ite (and (= x!0 4) (= x!1 1)) 8
+    (ite (and (= x!0 4) (= x!1 2)) 7
+    (ite (and (= x!0 4) (= x!1 4)) 9
+    (ite (and (= x!0 4) (= x!1 5)) 4
+    (ite (and (= x!0 4) (= x!1 7)) 5
+    (ite (and (= x!0 5) (= x!1 3)) 9
+    (ite (and (= x!0 5) (= x!1 4)) 6
+    (ite (and (= x!0 5) (= x!1 6)) 2
+    (ite (and (= x!0 5) (= x!1 7)) 3
+    (ite (and (= x!0 6) (= x!1 3)) 3
+    (ite (and (= x!0 6) (= x!1 5)) 8
+    (ite (and (= x!0 6) (= x!1 6)) 7
+    (ite (and (= x!0 6) (= x!1 8)) 9
+    (ite (and (= x!0 6) (= x!1 9)) 4
+    (ite (and (= x!0 7) (= x!1 1)) 4
+    (ite (and (= x!0 7) (= x!1 3)) 1
+    (ite (and (= x!0 7) (= x!1 5)) 9
+    (ite (and (= x!0 7) (= x!1 6)) 2
+    (ite (and (= x!0 7) (= x!1 7)) 8
+    (ite (and (= x!0 7) (= x!1 8)) 5
+    (ite (and (= x!0 7) (= x!1 9)) 6
+    (ite (and (= x!0 8) (= x!1 2)) 2
+    (ite (and (= x!0 8) (= x!1 3)) 8
+    (ite (and (= x!0 8) (= x!1 4)) 5
+    (ite (and (= x!0 8) (= x!1 7)) 9
+    (ite (and (= x!0 8) (= x!1 8)) 7
+    (ite (and (= x!0 9) (= x!1 1)) 6
+    (ite (and (= x!0 9) (= x!1 2)) 9
+    (ite (and (= x!0 9) (= x!1 4)) 4
+    (ite (and (= x!0 9) (= x!1 5)) 8
+    (ite (and (= x!0 9) (= x!1 6)) 7
+    (ite (and (= x!0 9) (= x!1 7)) 1
+    (ite (and (= x!0 9) (= x!1 8)) 2
+    (ite (and (= x!0 9) (= x!1 9)) 3
+    (ite (and (= x!0 1) (= x!1 7)) 8
+    (ite (and (= x!0 2) (= x!1 1)) 4
+    (ite (and (= x!0 2) (= x!1 4)) 2
+    (ite (and (= x!0 2) (= x!1 5)) 8
+    (ite (and (= x!0 2) (= x!1 9)) 6
+    (ite (and (= x!0 3) (= x!1 6)) 7
+    (ite (and (= x!0 3) (= x!1 8)) 3
+    (ite (and (= x!0 4) (= x!1 3)) 6
+    (ite (and (= x!0 4) (= x!1 6)) 3
+    (ite (and (= x!0 4) (= x!1 8)) 2
+    (ite (and (= x!0 4) (= x!1 9)) 1
+    (ite (and (= x!0 5) (= x!1 1)) 5
+    (ite (and (= x!0 5) (= x!1 2)) 4
+    (ite (and (= x!0 5) (= x!1 5)) 1
+    (ite (and (= x!0 5) (= x!1 8)) 7
+    (ite (and (= x!0 5) (= x!1 9)) 8
+    (ite (and (= x!0 6) (= x!1 1)) 1
+    (ite (and (= x!0 6) (= x!1 2)) 2
+    (ite (and (= x!0 6) (= x!1 4)) 5
+    (ite (and (= x!0 6) (= x!1 7)) 6
+    (ite (and (= x!0 7) (= x!1 2)) 7
+    (ite (and (= x!0 7) (= x!1 4)) 3
+    (ite (and (= x!0 8) (= x!1 1)) 3
+    (ite (and (= x!0 8) (= x!1 5)) 6
+    (ite (and (= x!0 8) (= x!1 6)) 1
+    (ite (and (= x!0 8) (= x!1 9)) 4
+    (ite (and (= x!0 9) (= x!1 3)) 5
+      9))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 )
+print
