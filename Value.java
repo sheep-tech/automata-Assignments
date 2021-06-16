@@ -8,7 +8,7 @@ public class Value {
         this.value = value;
     }
 
-    public Boolean asBoolean() {
+    public boolean asBoolean() {
         return (Boolean)value;
     }
 

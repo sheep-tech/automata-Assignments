@@ -9,11 +9,10 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
     @Override
     public Value visitPrint(MyGrammarParser.PrintContext ctx) {
         for (MyGrammarParser.ExprContext expr : ctx.expr()) {
-            String id = expr.getText(); // id is left-hand side of '='
+//            String id = expr.getText(); // id is left-hand side of '='
             Value value = visit(expr);
-            System.out.println(id + " = " + value); // print the assignment (e.g. a = 7)
+            System.out.println(value); // print the assignment (e.g. a = 7)
         }
-
         return Value.VOID;
     }
 
@@ -35,6 +34,24 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
 
         return Value.VOID;
     }
+
+    /** function statement */
+//    @Override
+//    public Value visitFunStat(MyGrammarParser.FunStatContext ctx) {
+//        // evaluate the boolean condition
+//        Value value = this.visitId(ctx.);
+//
+//        while(value.asBoolean()) {
+//
+//            // evaluate the code statement
+//            for (MyGrammarParser.StatementContext statement : ctx.statement()){
+//                this.visit(statement);
+//            }
+//            // evaluate the boolean condition
+//            value = this.visit(ctx.boolExpr());
+//        }
+//        return Value.VOID;
+//    }
 
     /** if statement */
     @Override

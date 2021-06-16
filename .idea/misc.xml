@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-=======
   <component name="ANTLRGenerationPreferences">
     <option name="perGrammarGenerationSettings">
       <list>
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/MyGrammar.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="C:\Users\buona\Documents\Git\Automata Assignment 3" />
+          <option name="outputDir" value="" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
           <option name="pkg" value="" />
@@ -18,8 +16,7 @@
       </list>
     </option>
   </component>
->>>>>>> assignment_3
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
