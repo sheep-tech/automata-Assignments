@@ -6,7 +6,7 @@ statement	: assign | loop | print | expr | ifStat | url | funStat;
 
 assign      : ID ASSIGN expr #assignExpr;
 
-loop		: WHILE boolExpr DO statement*;
+loop		: WHILE boolExpr DO statement* OD;
 
 print		: PRINT expr ( COMMA expr )*;
 
@@ -25,6 +25,8 @@ expr		: expr op=(MULT|DIV) expr	# mulDivExpr
 
 boolExpr    : expr AND expr		        # andExpr
             | expr OR expr              # orExpr
+            | boolExpr AND boolExpr     # andBoolExpr
+            | boolExpr OR boolExpr      # orBoolExpr
             | expr op=(EQ|NEQ) expr     # equalityExpr
             | expr op=(GT|LT) expr      # gtLtExpr
             | expr op=(GTEQ|LTEQ) expr  # gteqLteqExpr
@@ -64,6 +66,7 @@ FI			: 'fi';
 BEGFUN      : 'begfun';
 ENDFUN      : 'endfun';
 DO			: 'do';
+OD			: 'od';
 DOT			: '.';
 
 //TEXT		: '"' ~('\r' | '\n' | '"')* '"';

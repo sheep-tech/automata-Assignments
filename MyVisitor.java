@@ -2,9 +2,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MyVisitor extends MyGrammarBaseVisitor<Value> {
+
     /** "memory" for our calculator; variable/value pairs go here */
     Map<String, Value> memory = new HashMap<>();
 
+    public Map<String, Value> getMemory() {
+        return memory;
+    }
     /** print statement */
     @Override
     public Value visitPrint(MyGrammarParser.PrintContext ctx) {
@@ -36,22 +40,11 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
     }
 
     /** function statement */
-//    @Override
-//    public Value visitFunStat(MyGrammarParser.FunStatContext ctx) {
-//        // evaluate the boolean condition
-//        Value value = this.visitId(ctx.);
-//
-//        while(value.asBoolean()) {
-//
-//            // evaluate the code statement
-//            for (MyGrammarParser.StatementContext statement : ctx.statement()){
-//                this.visit(statement);
-//            }
-//            // evaluate the boolean condition
-//            value = this.visit(ctx.boolExpr());
-//        }
-//        return Value.VOID;
-//    }
+    @Override
+    public Value visitFunStat(MyGrammarParser.FunStatContext ctx) {
+
+        return Value.VOID;
+    }
 
     /** if statement */
     @Override

@@ -149,17 +149,17 @@ public interface MyGrammarListener extends ParseTreeListener {
 	 */
 	void exitMulDivExpr(MyGrammarParser.MulDivExprContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code andExpr}
+	 * Enter a parse tree produced by the {@code trueExpr}
 	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
 	 * @param ctx the parse tree
 	 */
-	void enterAndExpr(MyGrammarParser.AndExprContext ctx);
+	void enterTrueExpr(MyGrammarParser.TrueExprContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code andExpr}
+	 * Exit a parse tree produced by the {@code trueExpr}
 	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
 	 * @param ctx the parse tree
 	 */
-	void exitAndExpr(MyGrammarParser.AndExprContext ctx);
+	void exitTrueExpr(MyGrammarParser.TrueExprContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code orExpr}
 	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
@@ -173,17 +173,17 @@ public interface MyGrammarListener extends ParseTreeListener {
 	 */
 	void exitOrExpr(MyGrammarParser.OrExprContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code equalityExpr}
+	 * Enter a parse tree produced by the {@code andBoolExpr}
 	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
 	 * @param ctx the parse tree
 	 */
-	void enterEqualityExpr(MyGrammarParser.EqualityExprContext ctx);
+	void enterAndBoolExpr(MyGrammarParser.AndBoolExprContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code equalityExpr}
+	 * Exit a parse tree produced by the {@code andBoolExpr}
 	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
 	 * @param ctx the parse tree
 	 */
-	void exitEqualityExpr(MyGrammarParser.EqualityExprContext ctx);
+	void exitAndBoolExpr(MyGrammarParser.AndBoolExprContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code gtLtExpr}
 	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
@@ -209,18 +209,6 @@ public interface MyGrammarListener extends ParseTreeListener {
 	 */
 	void exitGteqLteqExpr(MyGrammarParser.GteqLteqExprContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code trueExpr}
-	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
-	 * @param ctx the parse tree
-	 */
-	void enterTrueExpr(MyGrammarParser.TrueExprContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code trueExpr}
-	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
-	 * @param ctx the parse tree
-	 */
-	void exitTrueExpr(MyGrammarParser.TrueExprContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code falseExpr}
 	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
 	 * @param ctx the parse tree
@@ -232,6 +220,42 @@ public interface MyGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFalseExpr(MyGrammarParser.FalseExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code orBoolExpr}
+	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
+	 * @param ctx the parse tree
+	 */
+	void enterOrBoolExpr(MyGrammarParser.OrBoolExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code orBoolExpr}
+	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
+	 * @param ctx the parse tree
+	 */
+	void exitOrBoolExpr(MyGrammarParser.OrBoolExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code equalityExpr}
+	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
+	 * @param ctx the parse tree
+	 */
+	void enterEqualityExpr(MyGrammarParser.EqualityExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code equalityExpr}
+	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
+	 * @param ctx the parse tree
+	 */
+	void exitEqualityExpr(MyGrammarParser.EqualityExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code andExpr}
+	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
+	 * @param ctx the parse tree
+	 */
+	void enterAndExpr(MyGrammarParser.AndExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code andExpr}
+	 * labeled alternative in {@link MyGrammarParser#boolExpr}.
+	 * @param ctx the parse tree
+	 */
+	void exitAndExpr(MyGrammarParser.AndExprContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link MyGrammarParser#returnExpr}.
 	 * @param ctx the parse tree

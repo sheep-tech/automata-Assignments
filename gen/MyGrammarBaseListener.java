@@ -171,13 +171,13 @@ public class MyGrammarBaseListener implements MyGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAndExpr(MyGrammarParser.AndExprContext ctx) { }
+	@Override public void enterTrueExpr(MyGrammarParser.TrueExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAndExpr(MyGrammarParser.AndExprContext ctx) { }
+	@Override public void exitTrueExpr(MyGrammarParser.TrueExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -195,13 +195,13 @@ public class MyGrammarBaseListener implements MyGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEqualityExpr(MyGrammarParser.EqualityExprContext ctx) { }
+	@Override public void enterAndBoolExpr(MyGrammarParser.AndBoolExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEqualityExpr(MyGrammarParser.EqualityExprContext ctx) { }
+	@Override public void exitAndBoolExpr(MyGrammarParser.AndBoolExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -231,18 +231,6 @@ public class MyGrammarBaseListener implements MyGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTrueExpr(MyGrammarParser.TrueExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTrueExpr(MyGrammarParser.TrueExprContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterFalseExpr(MyGrammarParser.FalseExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -250,6 +238,42 @@ public class MyGrammarBaseListener implements MyGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFalseExpr(MyGrammarParser.FalseExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOrBoolExpr(MyGrammarParser.OrBoolExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOrBoolExpr(MyGrammarParser.OrBoolExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEqualityExpr(MyGrammarParser.EqualityExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEqualityExpr(MyGrammarParser.EqualityExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAndExpr(MyGrammarParser.AndExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAndExpr(MyGrammarParser.AndExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

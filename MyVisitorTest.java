@@ -15,8 +15,20 @@ import static org.junit.jupiter.api.Assertions.*;
 class MyVisitorTest {
 
     MyVisitor visitor;
-    ParseTree tree;
+
+    MyGrammarLexer lexer;
+    CommonTokenStream tokens;
+    MyGrammarParser parser;
     private ByteArrayOutputStream output = new ByteArrayOutputStream();
+
+    ParseTree visit(CharStream input){
+
+        MyGrammarLexer lexer = new MyGrammarLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        MyGrammarParser parser = new MyGrammarParser(tokens);
+        ParseTree tree = parser.start();
+        return tree;
+    }
 
     @org.junit.jupiter.api.Test
     void visitPrint() throws IOException {
@@ -26,68 +38,81 @@ class MyVisitorTest {
         PrintStream old = System.out;
         // Tell Java to use your special stream
         System.setOut(ps);
-
         CharStream input = CharStreams.fromString("print 10");
-        MyGrammarLexer lexer = new MyGrammarLexer(input);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        MyGrammarParser parser = new MyGrammarParser(tokens);
-        ParseTree tree = parser.start();
         visitor = new MyVisitor();
-        visitor.visit(tree);
-        assertEquals("10", System.out.toString().getBytes());
-
+        visitor.visit(visit(input));
         // Put things back
         System.out.flush();
         System.setOut(old);
+        assertEquals("10",output.toString().replaceAll(System.getProperty("line.separator"), ""));
     }
 
     @org.junit.jupiter.api.Test
     void visitLoop() {
+        CharStream input = CharStreams.fromString("a = 10 \n while a>0 do a = a - 1 od");
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+        assertEquals(0.0,visitor.getMemory().get("a").asDouble());
     }
 
     @org.junit.jupiter.api.Test
-    void visitIfStat() {
+    void visitIfStatWithoutElse() {
+        CharStream input = CharStreams.fromString("a = 10 \n if a>8 then a = a - 1 fi");
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+        assertEquals(9.0,visitor.getMemory().get("a").asDouble());
     }
 
     @org.junit.jupiter.api.Test
-    void visitGtLtExpr() {
+    void visitIfStatWithElse() {
+        CharStream input = CharStreams.fromString("a = 8 \n if a>8 then a = a - 1 else a = a + 1 fi");
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+        assertEquals(9.0,visitor.getMemory().get("a").asDouble());
     }
 
     @org.junit.jupiter.api.Test
     void visitGteqLteqExpr() {
+        String inputStr = "a = 8 \n if a>=8 then a = a - 1 fi \n if a<=7 then a = a + 1 fi";
+        CharStream input = CharStreams.fromString(inputStr);
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+        assertEquals(8.0,visitor.getMemory().get("a").asDouble());
     }
 
     @org.junit.jupiter.api.Test
     void visitEqualityExpr() {
+        String inputStr = "a = 8 \n if a==8 then a = a - 1 fi \n if a!=7 then a = a + 1 fi";
+        CharStream input = CharStreams.fromString(inputStr);
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+        assertEquals(7.0,visitor.getMemory().get("a").asDouble());
     }
 
     @org.junit.jupiter.api.Test
     void visitAndExpr() {
+        String inputStr = "a = 8 \n b = 9 \n if a==8 && b==9 then a = a - 1 fi";
+        CharStream input = CharStreams.fromString(inputStr);
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+        assertEquals(7.0,visitor.getMemory().get("a").asDouble());
     }
 
     @org.junit.jupiter.api.Test
     void visitOrExpr() {
+        String inputStr = "a = 8 \n b = 9 \n if a==8 || b==7 then a = a - 1 fi";
+        CharStream input = CharStreams.fromString(inputStr);
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+        assertEquals(7.0,visitor.getMemory().get("a").asDouble());
     }
 
-    @org.junit.jupiter.api.Test
-    void visitTrueExpr() {
-    }
 
-    @org.junit.jupiter.api.Test
-    void visitFalseExpr() {
-    }
 
     @org.junit.jupiter.api.Test
     void visitAssignExpr() {
     }
 
-    @org.junit.jupiter.api.Test
-    void visitNumber() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void visitId() {
-    }
 
     @org.junit.jupiter.api.Test
     void visitMulDivExpr() {
