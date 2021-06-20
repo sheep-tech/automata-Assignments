@@ -9,9 +9,14 @@ fi
 print a, b
 
 c = 10
-while c > 0 do
+while (c > 0) do {
     b=b*2
     c=c-1
+}
 
 print c, b
 print 10
+
+int add(int a, int b) {
+    return a + b
+}

@@ -1,12 +1,18 @@
 import gen.MyGrammarBaseVisitor;
 import gen.MyGrammarParser;
+import org.antlr.runtime.Parser;
+import org.antlr.runtime.ParserRuleReturnScope;
+import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MyVisitor extends MyGrammarBaseVisitor<Value> {
     /** "memory" for our calculator; variable/value pairs go here */
     Map<String, Value> memory = new HashMap<>();
+    Map<String, Function> functionList = new HashMap<>();
 
     /** print statement */
     @Override
@@ -38,23 +44,54 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
         return Value.VOID;
     }
 
-    /** function statement */
-//    @Override
-//    public Value visitFunStat(MyGrammarParser.FunStatContext ctx) {
-//        // evaluate the boolean condition
-//        Value value = this.visitId(ctx.);
-//
-//        while(value.asBoolean()) {
-//
-//            // evaluate the code statement
-//            for (MyGrammarParser.StatementContext statement : ctx.statement()){
-//                this.visit(statement);
-//            }
-//            // evaluate the boolean condition
-//            value = this.visit(ctx.boolExpr());
-//        }
-//        return Value.VOID;
-//    }
+    /** declare function statement */
+    @Override
+    public Value visitDeclareFunStat(MyGrammarParser.DeclareFunStatContext ctx) {
+        String type = ctx.TYPE().getText();
+        type = type.substring(0,1).toUpperCase() + type.substring(1);
+        System.out.println("type: " + type);
+
+        String id = ctx.ID().getText();
+        System.out.println("params: " + ctx.params().children.get(1).getText());
+        System.out.println("params: " + ctx.params().children.get(4).getText());
+
+        System.out.println("nodes: " + ctx.statement());
+        functionList.put(id, new Function(FunctionType.valueOf(type), ctx.params(), ctx.statement()));
+
+        return Value.VOID;
+    }
+
+    @Override
+    public Value visitFunCall(MyGrammarParser.FunCallContext ctx) {
+        String id = ctx.getText();
+        List<ParseTree> arguments = ctx.arguments().children;
+
+        Value returnedValue = Value.VOID;
+
+        if (functionList.containsKey(id)) {
+            Function function = functionList.get(id);
+
+            function.assignArguments(arguments);
+
+                for(MyGrammarParser.StatementContext statement : function.getNodeTree()) {
+                    visit(statement);
+                }
+
+        } else
+            throw new RuntimeException("function indeclared: " + MyGrammarParser.VOCABULARY);
+
+        return returnedValue;
+    }
+
+    @Override
+    public Value visitReturnExpr(MyGrammarParser.ReturnExprContext ctx) {
+        return (new Value(visit(ctx.expr())));
+    }
+
+    @Override
+    public Value visitReturnBool(MyGrammarParser.ReturnBoolContext ctx) {
+        return (new Value(visit(ctx.boolExpr())));
+    }
 
     /** if statement */
     @Override

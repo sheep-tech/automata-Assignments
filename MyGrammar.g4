@@ -2,17 +2,23 @@ grammar MyGrammar;
 
 start		: statement* EOF;
 
-statement	: assign | loop | print | expr | ifStat | url | funStat;
+statement	: assign | loop | print | expr | ifStat | url | declareFunStat | funCall | returnStatement;
 
 assign      : ID ASSIGN expr #assignExpr;
 
-loop		: WHILE boolExpr DO statement*;
+loop		: WHILE '(' boolExpr ')' DO '{' statement+ '}' ;
 
 print		: PRINT expr ( COMMA expr )*;
 
 ifStat		: IF boolExpr THEN (statement)+ ( ELSE statement )? FI;
 
-funStat     : BEGFUN ID '(' ID ( COMMA ID )* ')' (statement)* returnExpr ENDFUN;
+declareFunStat: TYPE ID '(' params? ')' '{' statement+ '}';
+
+funCall     : ID '(' arguments? ')';
+
+params: TYPE ID (',' TYPE ID)*;
+
+arguments: expr (',' expr)*;
 
 url			: numberA DOT numberB DOT numberC DOT numberD;
 
@@ -20,6 +26,7 @@ expr		: expr op=(MULT|DIV) expr	# mulDivExpr
             | expr op=(PLUS|MINUS) expr	# plusMinusExpr
 			| NUMBER			# number
 			| ID				# id
+			| funCall           # exprFunCall
 			| '(' expr ')'      # parens
 ;
 
@@ -31,14 +38,22 @@ boolExpr    : expr AND expr		        # andExpr
             | TRUE                      # trueExpr
             | FALSE                     # falseExpr
 ;
-returnExpr  : 'return' (boolExpr | expr )??;
+returnStatement  : RETURN expr   #returnExpr
+        | RETURN boolExpr #returnBool
+;
 
 numberA		: NUMBER;
 numberB		: NUMBER;
 numberC		: NUMBER;
 numberD		: NUMBER;
 
-NUMBER		: [0-9]+ ; 
+TYPE        : INT | DOUBLE | STRING | CHAR | BOOLEAN;
+INT: 'int';
+DOUBLE : 'double';
+STRING: 'string';
+CHAR: 'char';
+BOOLEAN: 'boolean';
+NUMBER		: [0-9]+;
 PLUS : '+';
 MINUS : '-';
 MULT : '*';
@@ -65,6 +80,7 @@ BEGFUN      : 'begfun';
 ENDFUN      : 'endfun';
 DO			: 'do';
 DOT			: '.';
+RETURN      : 'return';
 
 //TEXT		: '"' ~('\r' | '\n' | '"')* '"';
 ID 			: [_A-Za-z][A-Za-z_!0-9.]* ;
