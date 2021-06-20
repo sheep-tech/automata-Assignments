@@ -1,10 +1,15 @@
+import org.antlr.v4.runtime.tree.ParseTree;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MyVisitor extends MyGrammarBaseVisitor<Value> {
 
     /** "memory" for our calculator; variable/value pairs go here */
     Map<String, Value> memory = new HashMap<>();
+    Map<String, Function> functionList = new HashMap<>();
 
     public Map<String, Value> getMemory() {
         return memory;
@@ -40,11 +45,48 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
 
     /** function statement */
     @Override
-    public Value visitFunStat(MyGrammarParser.FunStatContext ctx) {
+    public Value visitDeclareFunStat(MyGrammarParser.DeclareFunStatContext ctx){
+
+        String type = ctx.TYPE().getText();
+        type = type.substring(0,1).toUpperCase() + type.substring(1);
+        String id = ctx.ID().getText();
+        functionList.put(id, new Function(FunctionType.valueOf(type), ctx.params(), ctx.statement()));
+
 
         return Value.VOID;
     }
 
+    @Override
+    public Value visitFunCall(MyGrammarParser.FunCallContext ctx) {
+
+        String id = ctx.ID().getText();
+        List<ParseTree> arguments = ctx.arguments().children;
+            //pass arguments into params
+        // evaluate function
+        //return the result
+        Value returnedValue = Value.VOID;
+
+        if (functionList.containsKey(id)) {
+            Function function = functionList.get(id);
+            List<Value> argumentValues = new ArrayList<>();
+
+            for(MyGrammarParser.ExprContext expr : ctx.arguments().expr()) {
+                argumentValues.add(new Value(visit(expr)));
+            }
+
+           // function.assignArguments(argumentValues); // not working
+
+            // run statements
+            for(MyGrammarParser.StatementContext statement : function.getNodeTree()) {
+
+
+                visit(statement);
+            }
+        } else
+            throw new RuntimeException("function undeclared: " + MyGrammarParser.VOCABULARY);
+
+        return returnedValue;
+    }
     /** if statement */
     @Override
     public Value visitIfStat(MyGrammarParser.IfStatContext ctx) {

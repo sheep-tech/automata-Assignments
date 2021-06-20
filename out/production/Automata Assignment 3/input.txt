@@ -1,16 +1,2 @@
 a = 22
 b = 20
-
-if a >= 77 then
-    b = b + 10
-else
-    b = b - 10
-fi
-print a, b
-
-c = 10
-while c > 0 do
-    b=b*2
-    c=c-1
-od
-print c

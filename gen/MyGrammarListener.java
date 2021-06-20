@@ -69,15 +69,45 @@ public interface MyGrammarListener extends ParseTreeListener {
 	 */
 	void exitIfStat(MyGrammarParser.IfStatContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link MyGrammarParser#funStat}.
+	 * Enter a parse tree produced by {@link MyGrammarParser#declareFunStat}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunStat(MyGrammarParser.FunStatContext ctx);
+	void enterDeclareFunStat(MyGrammarParser.DeclareFunStatContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link MyGrammarParser#funStat}.
+	 * Exit a parse tree produced by {@link MyGrammarParser#declareFunStat}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunStat(MyGrammarParser.FunStatContext ctx);
+	void exitDeclareFunStat(MyGrammarParser.DeclareFunStatContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MyGrammarParser#funCall}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunCall(MyGrammarParser.FunCallContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MyGrammarParser#funCall}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunCall(MyGrammarParser.FunCallContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MyGrammarParser#params}.
+	 * @param ctx the parse tree
+	 */
+	void enterParams(MyGrammarParser.ParamsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MyGrammarParser#params}.
+	 * @param ctx the parse tree
+	 */
+	void exitParams(MyGrammarParser.ParamsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MyGrammarParser#arguments}.
+	 * @param ctx the parse tree
+	 */
+	void enterArguments(MyGrammarParser.ArgumentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MyGrammarParser#arguments}.
+	 * @param ctx the parse tree
+	 */
+	void exitArguments(MyGrammarParser.ArgumentsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link MyGrammarParser#url}.
 	 * @param ctx the parse tree
@@ -148,6 +178,18 @@ public interface MyGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMulDivExpr(MyGrammarParser.MulDivExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprFunCall}
+	 * labeled alternative in {@link MyGrammarParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprFunCall(MyGrammarParser.ExprFunCallContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprFunCall}
+	 * labeled alternative in {@link MyGrammarParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprFunCall(MyGrammarParser.ExprFunCallContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code trueExpr}
 	 * labeled alternative in {@link MyGrammarParser#boolExpr}.

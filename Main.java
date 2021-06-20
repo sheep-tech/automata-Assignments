@@ -6,7 +6,18 @@ public class Main
     public static void main(String[] args) throws Exception 
 	{
 //        CharStream input = CharStreams.fromStream(System.in);
-        CharStream input = CharStreams.fromString("a = 8 \n b = 9 \n if a==8 && b==9 then a = a - 1 fi print a");
+        CharStream input = CharStreams.fromString(
+                "int myfun (int a,int b){\n" +
+                        "if a > b then\n" +
+                        "a =  a + 1\n" +
+                        "fi\n" +
+                        "return a\n" +
+                        "}\n" +
+                        "\n" +
+                        "c = 10\n" +
+                        "d = 4\n" +
+                        "\n" +
+                        "print myfun(c,d)");
 		MyGrammarLexer lexer = new MyGrammarLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MyGrammarParser parser = new MyGrammarParser(tokens);
