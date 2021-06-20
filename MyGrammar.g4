@@ -34,7 +34,8 @@ print: 'print';
 
 AND         : 'and';
 EQ          : '=';
-SORT        : INT;
+SORT        : INT | STRING;
+STRING      : 'String';
 INT         : 'Int';
 VALUE		: [0-9]+ ;
 //TEXT		: '"' ~('\r' | '\n' | '"')* '"';
