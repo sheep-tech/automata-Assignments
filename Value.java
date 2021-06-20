@@ -4,9 +4,22 @@ public class Value {
 
     final Object value;
 
+    public boolean isNumber() {
+        return isNumber;
+    }
+
+    public void setNumber(boolean number) {
+        isNumber = number;
+    }
+
+    boolean isNumber = false;
+
     public Value(Object value) {
         this.value = value;
     }
+
+
+
 
     public boolean asBoolean() {
         return (Boolean)value;
@@ -45,8 +58,12 @@ public class Value {
             return false;
         }
 
-        Value that = (Value)o;
 
+        Value that = (Value)o;
+        if(that.isNumber() || this.isNumber)
+        {
+            return Double.parseDouble(that.value.toString()) == Double.parseDouble(this.value.toString());
+        }
         return this.value.equals(that.value);
     }
 

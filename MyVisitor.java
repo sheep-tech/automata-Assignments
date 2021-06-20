@@ -13,7 +13,6 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
     @Override
     public Value visitPrint(MyGrammarParser.PrintContext ctx) {
         for (MyGrammarParser.ExprContext expr : ctx.expr()) {
-//            String id = expr.getText(); // id is left-hand side of '='
             Value value = visit(expr);
             System.out.println(value); // print the assignment (e.g. a = 7)
         }
@@ -83,8 +82,14 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
 
     @Override
     public Value visitEqualityExpr(MyGrammarParser.EqualityExprContext ctx) {
+
         Value left = this.visit(ctx.expr(0));
         Value right = this.visit(ctx.expr(1));
+        if (ctx.stop.getType() == MyGrammarParser.NUMBER)
+        {
+            left.setNumber(true);
+            right.setNumber(true);
+        }
 
         switch (ctx.op.getType()) {
             case MyGrammarParser.EQ:
@@ -104,9 +109,23 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
     }
 
     @Override
+    public Value visitAndBoolExpr(MyGrammarParser.AndBoolExprContext ctx) {
+        Value left = visit(ctx.boolExpr(0));
+        Value right = visit(ctx.boolExpr(1));
+        return new Value(left.asBoolean() && right.asBoolean());
+    }
+
+    @Override
     public Value visitOrExpr(MyGrammarParser.OrExprContext ctx) {
         Value left = this.visit(ctx.expr(0));
         Value right = this.visit(ctx.expr(1));
+        return new Value(left.asBoolean() || right.asBoolean());
+    }
+
+    @Override
+    public Value visitOrBoolExpr(MyGrammarParser.OrBoolExprContext ctx) {
+        Value left = this.visit(ctx.boolExpr(0));
+        Value right = this.visit(ctx.boolExpr(1));
         return new Value(left.asBoolean() || right.asBoolean());
     }
 

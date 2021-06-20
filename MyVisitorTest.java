@@ -82,7 +82,7 @@ class MyVisitorTest {
 
     @org.junit.jupiter.api.Test
     void visitEqualityExpr() {
-        String inputStr = "a = 8 \n if a==8 then a = a - 1 fi \n if a!=7 then a = a + 1 fi";
+        String inputStr = "a = 8 \n if a==8 then a = a - 1 fi \n if a != 7 then a = a + 1 fi";
         CharStream input = CharStreams.fromString(inputStr);
         visitor = new MyVisitor();
         visitor.visit(visit(input));
@@ -100,7 +100,7 @@ class MyVisitorTest {
 
     @org.junit.jupiter.api.Test
     void visitOrExpr() {
-        String inputStr = "a = 8 \n b = 9 \n if a==8 || b==7 then a = a - 1 fi";
+        String inputStr = "a = 8 \n b = 9 \n if a == 8 || b == 7 then a = a - 1 fi";
         CharStream input = CharStreams.fromString(inputStr);
         visitor = new MyVisitor();
         visitor.visit(visit(input));
@@ -111,18 +111,31 @@ class MyVisitorTest {
 
     @org.junit.jupiter.api.Test
     void visitAssignExpr() {
+        String inputStr = "a = 8";
+        CharStream input = CharStreams.fromString(inputStr);
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+        assertEquals(8.0,visitor.getMemory().get("a").asDouble());
     }
 
 
     @org.junit.jupiter.api.Test
     void visitMulDivExpr() {
+        String inputStr = "a = 80 \n b = 10 \n c = a * b \n d = a / b";
+        CharStream input = CharStreams.fromString(inputStr);
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+        assertEquals(800.0,visitor.getMemory().get("c").asDouble());
+        assertEquals(8.0,visitor.getMemory().get("d").asDouble());
     }
 
     @org.junit.jupiter.api.Test
     void visitPlusMinusExpr() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void visitParens() {
+        String inputStr = "a = 8 \n b = 10 \n c = a - b \n d = a + b";
+        CharStream input = CharStreams.fromString(inputStr);
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+        assertEquals(-2.0,visitor.getMemory().get("c").asDouble());
+        assertEquals(18.0,visitor.getMemory().get("d").asDouble());
     }
 }
