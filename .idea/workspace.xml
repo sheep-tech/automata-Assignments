@@ -16,16 +16,163 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af13df2-a5da-4794-986c-203e68eb77e9" name="Default Changelist" comment="" />
+    <list default="true" id="0af13df2-a5da-4794-986c-203e68eb77e9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/antlr_4_9_2_complete.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Automata Assignment 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Function.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FunctionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyVisitorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReturnException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Value.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarBaseVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$AndExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$AssignContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$AssignExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$BoolExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$EqualityExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$ExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$FalseExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$GtLtExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$GteqLteqExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$IdContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$IfStatContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$LoopContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$MulDivExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$NumberAContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$NumberBContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$NumberCContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$NumberDContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$OrExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$ParensContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$PlusMinusExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$PrintContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$StartContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$StatementContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$TrueExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarParser$UrlContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyGrammarVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/MyVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/Value.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/Automata Assignment 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/Function.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/FunctionType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammar.g4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammar.interp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammar.tokens" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarBaseListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarBaseVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarLexer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarLexer.interp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarLexer.tokens" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$AndBoolExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$AndExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$ArgumentsContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$AssignContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$AssignExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$BoolExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$DeclareFunStatContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$EqualityExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$ExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$ExprFunCallContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$FalseExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$FunCallContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$GtLtExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$GteqLteqExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$IdContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$IfStatContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$LoopContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$MulDivExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$NumberAContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$NumberBContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$NumberCContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$NumberContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$NumberDContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$OrBoolExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$OrExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$ParamsContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$ParensContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$PlusMinusExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$PrintContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$ReturnExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$StartContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$StatementContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$TrueExprContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser$UrlContext.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarParser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyGrammarVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/MyVisitorTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/ReturnException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/Value.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/antlr-4.9.2-complete.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/output/antlr4_parse_tree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/output/assignmentE/Assignment_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/output/assignmentE/MyGrammar.g4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/output/assignmentE/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Automata Assignment 3/output/assignmentE_Group11.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output/antlr4_parse_tree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output/assignmentE/Assignment_E.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output/assignmentE/MyGrammar.g4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output/assignmentE/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output/assignmentE_Group11.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyGrammar.g4" beforeDir="false" afterPath="$PROJECT_DIR$/MyGrammar.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/antlr4_parse_tree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/antlrExampleListener.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MyGrammar.interp" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MyGrammar.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MyGrammar.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MyGrammarBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MyGrammarBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MyGrammarLexer.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MyGrammarLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MyGrammarLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MyGrammarLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MyGrammarListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MyGrammarListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/MyGrammarParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/MyGrammarParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.bat" beforeDir="false" afterPath="$PROJECT_DIR$/init.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarBaseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/obj/MyGrammarBaseListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/obj/MyGrammarLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/obj/MyGrammarListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarParser$AddContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarParser$DivContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarParser$ExpressionContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarParser$MulContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarParser$MyStartContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarParser$NumberContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/obj/MyGrammarParser$NumberContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarParser$OperationContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarParser$SubContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarParser$Var1Context.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarParser$Var2Context.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyGrammarParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/obj/MyGrammarParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/MyListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarBaseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarLexer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarParser$AddContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarParser$DivContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarParser$ExpressionContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarParser$MulContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarParser$MyStartContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarParser$OperationContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarParser$SubContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarParser$Var1Context.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarParser$Var2Context.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/gen/MyGrammarParser.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +187,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1swctJnkRsDTqGbX3J4jmRB1A64" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -54,7 +204,54 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.MyVisitorTest.visitLoop">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Automata Assignment 3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyVisitorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Automata Assignment 3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyVisitorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyVisitorTest.visitLoop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Automata Assignment 3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyVisitorTest" />
+      <option name="METHOD_NAME" value="visitLoop" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyVisitorTest.visitPlusMinusExpr" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Automata Assignment 3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyVisitorTest" />
+      <option name="METHOD_NAME" value="visitPlusMinusExpr" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JarApplication">
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2" />
@@ -78,6 +275,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MyVisitorTest.visitLoop" />
+        <item itemvalue="JUnit.MyVisitorTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MyVisitorTest.visitPlusMinusExpr" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -150,7 +355,8 @@
     <MESSAGE value="corrected grammar eql" />
     <MESSAGE value="generated correct lexer and parsers" />
     <MESSAGE value="replace files with new generated java project files" />
-    <option name="LAST_COMMIT_MESSAGE" value="replace files with new generated java project files" />
+    <MESSAGE value="merge conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge conflict" />
   </component>
   <component name="WindowStateProjectService">
     <state x="141" y="8" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621812369057">
@@ -161,6 +367,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="467" y="70" key="#com.intellij.ide.macro.MacrosDialog/0.0.1366.728/-1920.-87.1536.824@0.0.1366.728" timestamp="1621812346401" />
+    <state x="488" y="64" key="#com.intellij.ide.util.MemberChooser" timestamp="1624238648212">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="64" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1624238648212" />
     <state x="412" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1621812205191">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -169,13 +379,78 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728/-1920.-87.1536.824@0.0.1366.728" timestamp="1622027620941" />
+    <state width="1323" height="258" key="GridCell.Tab.0.bottom" timestamp="1624238451481">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="258" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1624238451481" />
+    <state width="1323" height="258" key="GridCell.Tab.0.center" timestamp="1624238451481">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="258" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1624238451481" />
+    <state width="1323" height="258" key="GridCell.Tab.0.left" timestamp="1624238451481">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="258" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1624238451481" />
+    <state width="1323" height="258" key="GridCell.Tab.0.right" timestamp="1624238451481">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="258" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1624238451481" />
+    <state width="1323" height="258" key="GridCell.Tab.1.bottom" timestamp="1624238451481">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="258" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1624238451481" />
+    <state width="1323" height="258" key="GridCell.Tab.1.center" timestamp="1624238451481">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="258" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1624238451481" />
+    <state width="1323" height="258" key="GridCell.Tab.1.left" timestamp="1624238451481">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="258" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1624238451481" />
+    <state width="1323" height="258" key="GridCell.Tab.1.right" timestamp="1624238451481">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="258" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1624238451481" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1621811960027">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728/-1920.-87.1536.824@0.0.1366.728" timestamp="1621811960027" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1624239430012">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1624239430012" />
     <state x="65" y="0" key="new project wizard" timestamp="1622027624755">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="65" y="0" key="new project wizard/0.0.1366.728/-1920.-87.1536.824@0.0.1366.728" timestamp="1622027624755" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1624237139034">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1624237139034" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1624237446479">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1624237446479" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/MyVisitor.java</url>
+          <line>231</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/MyVisitor.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="functionList" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
