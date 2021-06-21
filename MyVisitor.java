@@ -71,6 +71,8 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
         if (functionList.containsKey(id)) {
             Function function = functionList.get(id);
 
+            for(MyGrammarParser.ExprContext expr : ctx.arguments().expr())
+
             function.assignArguments(arguments);
 
                 for(MyGrammarParser.StatementContext statement : function.getNodeTree()) {
@@ -85,7 +87,7 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
 
     @Override
     public Value visitReturnExpr(MyGrammarParser.ReturnExprContext ctx) {
-        return (new Value(visit(ctx.expr())));
+        return new ReturnException((new Value(visit(ctx.expr()))));
     }
 
     @Override
