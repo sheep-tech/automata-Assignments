@@ -1,7 +1,4 @@
-import gen.MyGrammarBaseVisitor;
-import gen.MyGrammarParser;
 import org.antlr.v4.runtime.tree.ParseTree;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,6 +9,14 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
     /** "memory" for our calculator; variable/value pairs go here */
     private List<HashMap<String, Value>> memory = new ArrayList<HashMap<String, Value>>();
     private int memoryIndex = 0;
+
+    public int getMemoryIndex() {
+        return memoryIndex;
+    }
+
+    public Map<String, Function> getFunctionList() {
+        return functionList;
+    }
 
     private Map<String, Function> functionList = new HashMap<>();
 
@@ -24,6 +29,7 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
         return memory;
     }
     /** print statement */
+
     @Override
     public Value visitPrint(MyGrammarParser.PrintContext ctx) {
         for (MyGrammarParser.ExprContext expr : ctx.expr()) {
@@ -106,6 +112,7 @@ public class MyVisitor extends MyGrammarBaseVisitor<Value> {
 
         } else
             throw new RuntimeException("function undeclared: " + MyGrammarParser.VOCABULARY);
+
 
         return returnedValue;
     }

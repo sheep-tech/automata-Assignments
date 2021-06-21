@@ -1,11 +1,10 @@
-import gen.MyGrammarLexer;
-import gen.MyGrammarParser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -140,4 +139,63 @@ class MyVisitorTest {
         assertEquals(-2.0,visitor.getMemory().get(0).get("c").asDouble());
         assertEquals(18.0,visitor.getMemory().get(0).get("d").asDouble());
     }
+
+    @org.junit.jupiter.api.Test
+    void visitDeclareFunStat() {
+        String inputStr = "int myFun(int a, int b)\n" +
+                "{\n" +
+                "    while (b > 0) do {\n" +
+                "     b = b - 1\n" +
+                "     if a > b then\n" +
+                "        a = a + 1\n" +
+                "     else\n" +
+                "        a = a + 2\n" +
+                "     fi\n" +
+                "    }\n" +
+                "\n" +
+                "    if a > 10 then\n" +
+                "     a = a * 2\n" +
+                "     a = a + 1\n" +
+                "     fi\n" +
+                "\n" +
+                "     return a\n" +
+                "}";
+        CharStream input = CharStreams.fromString(inputStr);
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+        Function fun = visitor.getFunctionList().get("myFun");
+        assertEquals(FunctionType.Int.toString(),fun.getFunctionType().toString());//Check function return type
+        assertEquals(2,fun.getParameters().ID().size());//Check parameters count
+        assertEquals(3,fun.getNodeTree().size());//Check statements count
+    }
+    @Test
+    void visitFunCall() {
+        String inputStr = "int myFun(int a, int b)\n" +
+                "{\n" +
+                "    while (b > 0) do {\n" +
+                "     b = b - 1\n" +
+                "     if a > b then\n" +
+                "        a = a + 1\n" +
+                "     else\n" +
+                "        a = a + 2\n" +
+                "     fi\n" +
+                "    }\n" +
+                "\n" +
+                "    if a > 10 then\n" +
+                "     a = a * 2\n" +
+                "     a = a + 1\n" +
+                "     fi\n" +
+                "\n" +
+                "     return a\n" +
+                "}" +
+                "\n " +
+                "r = 10\n" +
+                "s = 4\n" +
+                "myFun(r,s)";
+        CharStream input = CharStreams.fromString(inputStr);
+        visitor = new MyVisitor();
+        visitor.visit(visit(input));
+
+    }
+
 }

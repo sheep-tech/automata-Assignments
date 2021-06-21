@@ -48,7 +48,7 @@ null
 null
 null
 null
-null
+RETURN
 TYPE
 INT
 DOUBLE
@@ -91,7 +91,7 @@ T__0
 T__1
 T__2
 T__3
-T__4
+RETURN
 TYPE
 INT
 DOUBLE
