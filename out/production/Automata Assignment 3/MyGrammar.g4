@@ -16,7 +16,7 @@ declareFunStat: TYPE ID '(' params? ')' '{' statement* returnExpr '}';
 
 funCall     : ID '(' arguments? ')';
 
-params: TYPE ID (',' TYPE ID)*;
+params: TYPE expr (',' TYPE expr)*;
 
 arguments: expr (',' expr)*;
 
@@ -32,6 +32,8 @@ expr		: expr op=(MULT|DIV) expr	# mulDivExpr
 
 boolExpr    : expr AND expr		        # andExpr
             | expr OR expr              # orExpr
+            | boolExpr AND boolExpr     # andBoolExpr
+            | boolExpr OR boolExpr      # orBoolExpr
             | expr op=(EQ|NEQ) expr     # equalityExpr
             | expr op=(GT|LT) expr      # gtLtExpr
             | expr op=(GTEQ|LTEQ) expr  # gteqLteqExpr
@@ -78,7 +80,6 @@ BEGFUN      : 'begfun';
 ENDFUN      : 'endfun';
 DO			: 'do';
 DOT			: '.';
-
 //TEXT		: '"' ~('\r' | '\n' | '"')* '"';
 ID 			: [_A-Za-z][A-Za-z_!0-9.]* ;
 ID_FUN 	    : [_A-Za-z][A-Za-z_!0-9]+ ;

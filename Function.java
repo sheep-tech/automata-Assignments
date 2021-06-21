@@ -1,5 +1,5 @@
-import gen.MyGrammarParser;
 import org.antlr.v4.runtime.tree.ParseTree;
+import gen.MyGrammarParser;
 
 import java.util.List;
 
@@ -14,9 +14,9 @@ public class Function {
         this.parameters = parameters;
     }
 
-    public void assignArguments(List<ParseTree> arguments) {
+    public void assignArguments(List<Value> arguments) {
         int paramsIndex = 1;
-        for (ParseTree argument : arguments) {
+        for (Value argument : arguments) {
             this.parameters.children.get(paramsIndex);
         }
     }
