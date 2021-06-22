@@ -15,7 +15,10 @@ public class Main
 
         ParseTree tree = parser.myStart();
 
-        MyVisitor visitor = new MyVisitor();
-        visitor.visit(tree);
+//        MyVisitor visitor = new MyVisitor();
+//        visitor.visit(tree);
+
+        GraphVizListener graphVizListener = new GraphVizListener();
+        ParseTreeWalker.DEFAULT.walk(graphVizListener, tree);
     }
 }
